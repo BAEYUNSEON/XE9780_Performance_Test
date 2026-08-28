@@ -808,5 +808,10 @@ slurm-wlm 23.11.4
 ### 1.1 DCGM 진단 (하드웨어 기본 상태 확인)
 - **벤치마그 전에 GPU 자체에 결함(ECC에러, 온도, 전력, PCIe재훈련 등)이 없는지 먼저 걸러내는 단계**
 ```bash
+# 드라이버가 보고하는 CUDA 메이저 버전 자동 추출
+CUDA_VERSION=$(nvidia-smi | sed -E -n 's/.*CUDA Version: ([0-9]+)[.].*/\1/p')
+echo $CUDA_VERSION   # 13이 나와야 정상
 
+sudo apt-get update
+sudo apt-get install --yes --install-recommends datacenter-gpu-manager-4-cuda${CUDA_VERSION}
 ```
