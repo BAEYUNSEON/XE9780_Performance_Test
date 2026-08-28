@@ -1,0 +1,1104 @@
+{
+	"GPUS" : 
+	[
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885029789698,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789720,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029800583,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034801145,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029800582,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034801144,
+					"value" : 0
+				}
+			],
+			"gpuId" : 6,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885029789620,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885034789642,
+					"value" : 42
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885029789724,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789747,
+					"value" : 0
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885029790763,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885034790779,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885029792346,
+					"value" : 40
+				},
+				{
+					"timestamp" : 1787885034792376,
+					"value" : 40
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885029789878,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789901,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885029790737,
+					"value" : 239.34399999999999
+				},
+				{
+					"timestamp" : 1787885034790754,
+					"value" : 240.33199999999999
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885029800584,
+					"value" : 180218914048
+				},
+				{
+					"timestamp" : 1787885034801146,
+					"value" : 180218914048
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885029800584,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034801146,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885029800583,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034801145,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885029791578,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885034791598,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885029800581,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034801143,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885029789428,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789450,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029799976,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034800528,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029799974,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034800526,
+					"value" : 0
+				}
+			],
+			"gpuId" : 5,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885029789516,
+					"value" : 32
+				},
+				{
+					"timestamp" : 1787885034789537,
+					"value" : 32
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885029791987,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034792016,
+					"value" : 0
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885029792294,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885034792323,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885029792321,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885034792350,
+					"value" : 31
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885029792013,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034792039,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885029789852,
+					"value" : 235.571
+				},
+				{
+					"timestamp" : 1787885034789874,
+					"value" : 235.572
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885029799977,
+					"value" : 180137747552
+				},
+				{
+					"timestamp" : 1787885034800529,
+					"value" : 180137747552
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885029799975,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034800527,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885029799975,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034800527,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885029791956,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885034791989,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885029799973,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034800525,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885029791930,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034791955,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029796003,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796812,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029796002,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796811,
+					"value" : 0
+				}
+			],
+			"gpuId" : 4,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885029790582,
+					"value" : 46
+				},
+				{
+					"timestamp" : 1787885034790598,
+					"value" : 46
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885029791902,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034791928,
+					"value" : 0
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885029790472,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885034790492,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885029790789,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885034790804,
+					"value" : 42
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885029791629,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034791649,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885029790659,
+					"value" : 242.035
+				},
+				{
+					"timestamp" : 1787885034790674,
+					"value" : 242.46199999999999
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885029796003,
+					"value" : 180499181600
+				},
+				{
+					"timestamp" : 1787885034796813,
+					"value" : 180499181600
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885029796002,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796812,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885029796001,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796810,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885029789826,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885034789849,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885029796000,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796809,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885029791551,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034791571,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029795401,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796191,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029795402,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796192,
+					"value" : 0
+				}
+			],
+			"gpuId" : 3,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885029790635,
+					"value" : 32
+				},
+				{
+					"timestamp" : 1787885034790652,
+					"value" : 32
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885029791524,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034791544,
+					"value" : 0
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885029789399,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885034789420,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885029791604,
+					"value" : 30
+				},
+				{
+					"timestamp" : 1787885034791623,
+					"value" : 30
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885029791244,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034791258,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885029791166,
+					"value" : 232.40199999999999
+				},
+				{
+					"timestamp" : 1787885034791178,
+					"value" : 231.68100000000001
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885029795403,
+					"value" : 180927288960
+				},
+				{
+					"timestamp" : 1787885034796193,
+					"value" : 180927288960
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885029795402,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796192,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885029795400,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796190,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885029791192,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885034791204,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885029795399,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034796189,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885029791217,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034791230,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029794779,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034795318,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029794779,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034795317,
+					"value" : 0
+				}
+			],
+			"gpuId" : 2,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885029789749,
+					"value" : 40
+				},
+				{
+					"timestamp" : 1787885034789772,
+					"value" : 40
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885029789801,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789824,
+					"value" : 0
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885029789647,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885034789668,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885029789593,
+					"value" : 36
+				},
+				{
+					"timestamp" : 1787885034789615,
+					"value" : 37
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885029789104,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789128,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885029789457,
+					"value" : 239.62100000000001
+				},
+				{
+					"timestamp" : 1787885034789480,
+					"value" : 239.46600000000001
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885029794780,
+					"value" : 180670103968
+				},
+				{
+					"timestamp" : 1787885034795318,
+					"value" : 180670103968
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885029794777,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034795316,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885029794778,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034795316,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885029789566,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885034789590,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885029794777,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034795315,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885029790813,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034790829,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029794157,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794704,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029794159,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794705,
+					"value" : 0
+				}
+			],
+			"gpuId" : 1,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885029791138,
+					"value" : 44
+				},
+				{
+					"timestamp" : 1787885034791152,
+					"value" : 44
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885029790608,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034790625,
+					"value" : 0
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885029790526,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885034790544,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885029789068,
+					"value" : 41
+				},
+				{
+					"timestamp" : 1787885034789092,
+					"value" : 41
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885029790864,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034790880,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885029789542,
+					"value" : 243.779
+				},
+				{
+					"timestamp" : 1787885034789566,
+					"value" : 243.47499999999999
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885029794160,
+					"value" : 180655096672
+				},
+				{
+					"timestamp" : 1787885034794706,
+					"value" : 180655096672
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885029794158,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794704,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885029794159,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794705,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885029790499,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885034790520,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885029794156,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794702,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885029789672,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789694,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029793533,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794112,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885029793534,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794113,
+					"value" : 0
+				}
+			],
+			"gpuId" : 0,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885029790686,
+					"value" : 30
+				},
+				{
+					"timestamp" : 1787885034790701,
+					"value" : 30
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885029789488,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034789509,
+					"value" : 0
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885029789775,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885034789798,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885029790838,
+					"value" : 29
+				},
+				{
+					"timestamp" : 1787885034790854,
+					"value" : 29
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885029790161,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034790181,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885029790555,
+					"value" : 233.59100000000001
+				},
+				{
+					"timestamp" : 1787885034790571,
+					"value" : 233.77600000000001
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885029793535,
+					"value" : 180606186336
+				},
+				{
+					"timestamp" : 1787885034794114,
+					"value" : 180606186336
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885029793534,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794114,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885029793531,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794111,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885029790710,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885034790726,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885029793530,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885034794110,
+					"value" : 0
+				}
+			]
+		}
+	]
+}

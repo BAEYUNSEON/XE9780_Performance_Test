@@ -1,0 +1,3330 @@
+{
+	"GPUS" : 
+	[
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885041721054,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046721124,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051721188,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056721194,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061721309,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066721310,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071721357,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041740443,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046741824,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051742831,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056744074,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061745120,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066746200,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071747336,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041740441,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046741823,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051742830,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056744073,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061745118,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066746198,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071747335,
+					"value" : 0
+				}
+			],
+			"gpuId" : 6,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885041720960,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885046721047,
+					"value" : 44
+				},
+				{
+					"timestamp" : 1787885051721114,
+					"value" : 44
+				},
+				{
+					"timestamp" : 1787885056721118,
+					"value" : 45
+				},
+				{
+					"timestamp" : 1787885061721232,
+					"value" : 45
+				},
+				{
+					"timestamp" : 1787885066721235,
+					"value" : 45
+				},
+				{
+					"timestamp" : 1787885071721286,
+					"value" : 45
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885041721082,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046721151,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885051721216,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885056721220,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885061721337,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885066721411,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885071721457,
+					"value" : 100
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885041722676,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885046722736,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885051722866,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885056722908,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885061722929,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885066722988,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885071723098,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885041725229,
+					"value" : 40
+				},
+				{
+					"timestamp" : 1787885046725470,
+					"value" : 41
+				},
+				{
+					"timestamp" : 1787885051725728,
+					"value" : 41
+				},
+				{
+					"timestamp" : 1787885056727919,
+					"value" : 41
+				},
+				{
+					"timestamp" : 1787885061729323,
+					"value" : 41
+				},
+				{
+					"timestamp" : 1787885066729433,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885071729470,
+					"value" : 42
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885041721240,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046721305,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051721372,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056721373,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061721503,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066721564,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071721621,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885041722648,
+					"value" : 227.81100000000001
+				},
+				{
+					"timestamp" : 1787885046722712,
+					"value" : 346.16899999999998
+				},
+				{
+					"timestamp" : 1787885051722841,
+					"value" : 345.23099999999999
+				},
+				{
+					"timestamp" : 1787885056722883,
+					"value" : 345.79899999999998
+				},
+				{
+					"timestamp" : 1787885061722904,
+					"value" : 346.209
+				},
+				{
+					"timestamp" : 1787885066722959,
+					"value" : 346.66000000000003
+				},
+				{
+					"timestamp" : 1787885071723072,
+					"value" : 347.08499999999998
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885041740443,
+					"value" : 180218914048
+				},
+				{
+					"timestamp" : 1787885046741825,
+					"value" : 180218914048
+				},
+				{
+					"timestamp" : 1787885051742832,
+					"value" : 180218914048
+				},
+				{
+					"timestamp" : 1787885056744075,
+					"value" : 180218914048
+				},
+				{
+					"timestamp" : 1787885061745120,
+					"value" : 180218914048
+				},
+				{
+					"timestamp" : 1787885066746201,
+					"value" : 180218914048
+				},
+				{
+					"timestamp" : 1787885071747337,
+					"value" : 180218914048
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885041740443,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046741824,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051742832,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056744074,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061745120,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066746200,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071747336,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885041740442,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046741823,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051742830,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056744073,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061745119,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066746199,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071747335,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885041724050,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885046724122,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885051724421,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885056726467,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885061727959,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885066728029,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885071728058,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885041740440,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046741821,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051742828,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056744071,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061745117,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066746197,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071747333,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885041720750,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046720815,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051720858,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056720926,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061721040,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066721050,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071721100,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041739628,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046740830,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051741856,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056743117,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061744211,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066745223,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071746337,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041739626,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046740828,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051741854,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056743115,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061744210,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066745222,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071746336,
+					"value" : 0
+				}
+			],
+			"gpuId" : 5,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885041720845,
+					"value" : 32
+				},
+				{
+					"timestamp" : 1787885046720900,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885051720937,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885056721012,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885061721130,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885066721134,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885071721184,
+					"value" : 34
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885041724731,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046724788,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885051725096,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885056727230,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885061728704,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885066728737,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885071728761,
+					"value" : 100
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885041725175,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885046725419,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885051725681,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885056727853,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885061729274,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885066729380,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885071729417,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885041725203,
+					"value" : 30
+				},
+				{
+					"timestamp" : 1787885046725445,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885051725705,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885056727879,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885061729299,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885066729408,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885071729444,
+					"value" : 32
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885041724759,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046724812,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051725122,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056727255,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061728728,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066728762,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071728786,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885041721212,
+					"value" : 235.61099999999999
+				},
+				{
+					"timestamp" : 1787885046721280,
+					"value" : 326.79300000000001
+				},
+				{
+					"timestamp" : 1787885051721346,
+					"value" : 326.90800000000002
+				},
+				{
+					"timestamp" : 1787885056721348,
+					"value" : 326.44099999999997
+				},
+				{
+					"timestamp" : 1787885061721464,
+					"value" : 328.10000000000002
+				},
+				{
+					"timestamp" : 1787885066721538,
+					"value" : 327.387
+				},
+				{
+					"timestamp" : 1787885071721597,
+					"value" : 326.92399999999998
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885041739629,
+					"value" : 180137747552
+				},
+				{
+					"timestamp" : 1787885046740830,
+					"value" : 180137747552
+				},
+				{
+					"timestamp" : 1787885051741857,
+					"value" : 180137747552
+				},
+				{
+					"timestamp" : 1787885056743118,
+					"value" : 180137747552
+				},
+				{
+					"timestamp" : 1787885061744212,
+					"value" : 180137747552
+				},
+				{
+					"timestamp" : 1787885066745224,
+					"value" : 180137747552
+				},
+				{
+					"timestamp" : 1787885071746338,
+					"value" : 180137747552
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885041739626,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046740828,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051741855,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056743116,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061744210,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066745222,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071746336,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885041739627,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046740829,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051741855,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056743116,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061744210,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066745222,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071746336,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885041724701,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885046724764,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885051725072,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885056727205,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885061728680,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885066728713,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885071728737,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885041739625,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046740827,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051741853,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056743114,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061744208,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066745220,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071746334,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885041724673,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046724738,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051725048,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056727179,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061728654,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066728686,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071728710,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041738590,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046739926,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051740873,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056742086,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061743201,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066744182,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071745233,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041738588,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046739924,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051740872,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056742085,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061743200,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066744181,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071745232,
+					"value" : 0
+				}
+			],
+			"gpuId" : 4,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885041722488,
+					"value" : 46
+				},
+				{
+					"timestamp" : 1787885046722556,
+					"value" : 48
+				},
+				{
+					"timestamp" : 1787885051722686,
+					"value" : 48
+				},
+				{
+					"timestamp" : 1787885056722727,
+					"value" : 48
+				},
+				{
+					"timestamp" : 1787885061722753,
+					"value" : 48
+				},
+				{
+					"timestamp" : 1787885066722803,
+					"value" : 49
+				},
+				{
+					"timestamp" : 1787885071722913,
+					"value" : 49
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885041724646,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046724712,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885051725022,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885056727153,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885061728627,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885066728660,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885071728687,
+					"value" : 100
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885041722378,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885046722449,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885051722585,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885056722622,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885061722656,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885066722699,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885071722808,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885041722704,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885046722762,
+					"value" : 43
+				},
+				{
+					"timestamp" : 1787885051722892,
+					"value" : 43
+				},
+				{
+					"timestamp" : 1787885056722930,
+					"value" : 43
+				},
+				{
+					"timestamp" : 1787885061722955,
+					"value" : 43
+				},
+				{
+					"timestamp" : 1787885066723010,
+					"value" : 43
+				},
+				{
+					"timestamp" : 1787885071723122,
+					"value" : 44
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885041724104,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046724173,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051724472,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056726517,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061728020,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066728079,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071728108,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885041722568,
+					"value" : 242.167
+				},
+				{
+					"timestamp" : 1787885046722634,
+					"value" : 332.69999999999999
+				},
+				{
+					"timestamp" : 1787885051722765,
+					"value" : 333.55799999999999
+				},
+				{
+					"timestamp" : 1787885056722806,
+					"value" : 333.26600000000002
+				},
+				{
+					"timestamp" : 1787885061722828,
+					"value" : 334.02999999999997
+				},
+				{
+					"timestamp" : 1787885066722883,
+					"value" : 332.75999999999999
+				},
+				{
+					"timestamp" : 1787885071722997,
+					"value" : 333.29300000000001
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885041738590,
+					"value" : 180499181600
+				},
+				{
+					"timestamp" : 1787885046739926,
+					"value" : 180499181600
+				},
+				{
+					"timestamp" : 1787885051740874,
+					"value" : 180499181600
+				},
+				{
+					"timestamp" : 1787885056742087,
+					"value" : 180499181600
+				},
+				{
+					"timestamp" : 1787885061743203,
+					"value" : 180499181600
+				},
+				{
+					"timestamp" : 1787885066744183,
+					"value" : 180499181600
+				},
+				{
+					"timestamp" : 1787885071745234,
+					"value" : 180499181600
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885041738589,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046739925,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051740872,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056742085,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061743200,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066744181,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071745232,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885041738587,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046739923,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051740871,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056742084,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061743199,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066744180,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071745231,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885041721187,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885046721254,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885051721321,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885056721323,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885061721439,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885066721514,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885071721570,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885041738587,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046739923,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051740870,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056742083,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061743198,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066744077,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071745230,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885041724022,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046724023,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051724393,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056726440,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061727932,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066727995,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071728030,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041737558,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046738839,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051739879,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056741059,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061742127,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066743122,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071744203,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041737559,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046738840,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051739880,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056741060,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061742128,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066743123,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071744204,
+					"value" : 0
+				}
+			],
+			"gpuId" : 3,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885041722542,
+					"value" : 32
+				},
+				{
+					"timestamp" : 1787885046722609,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885051722740,
+					"value" : 33
+				},
+				{
+					"timestamp" : 1787885056722781,
+					"value" : 33
+				},
+				{
+					"timestamp" : 1787885061722803,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885066722857,
+					"value" : 34
+				},
+				{
+					"timestamp" : 1787885071722964,
+					"value" : 34
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885041723988,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046723997,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885051724367,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885056726412,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885061727905,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885066727960,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885071728000,
+					"value" : 100
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885041720719,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885046720785,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885051720830,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885056720899,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885061720972,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885066720979,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885071720997,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885041724078,
+					"value" : 30
+				},
+				{
+					"timestamp" : 1787885046724146,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885051724447,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885056726491,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885061727993,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885066728055,
+					"value" : 31
+				},
+				{
+					"timestamp" : 1787885071728084,
+					"value" : 32
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885041723379,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046723423,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051723742,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056724216,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061725834,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066725852,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071725902,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885041723298,
+					"value" : 234.85300000000001
+				},
+				{
+					"timestamp" : 1787885046723347,
+					"value" : 317.89600000000002
+				},
+				{
+					"timestamp" : 1787885051723668,
+					"value" : 317.32600000000002
+				},
+				{
+					"timestamp" : 1787885056724141,
+					"value" : 318.65600000000001
+				},
+				{
+					"timestamp" : 1787885061725760,
+					"value" : 318.74900000000002
+				},
+				{
+					"timestamp" : 1787885066725770,
+					"value" : 317.81900000000002
+				},
+				{
+					"timestamp" : 1787885071725821,
+					"value" : 318.58600000000001
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885041737559,
+					"value" : 180927288960
+				},
+				{
+					"timestamp" : 1787885046738841,
+					"value" : 180927288960
+				},
+				{
+					"timestamp" : 1787885051739882,
+					"value" : 180927288960
+				},
+				{
+					"timestamp" : 1787885056741062,
+					"value" : 180927288960
+				},
+				{
+					"timestamp" : 1787885061742130,
+					"value" : 180927288960
+				},
+				{
+					"timestamp" : 1787885066743124,
+					"value" : 180927288960
+				},
+				{
+					"timestamp" : 1787885071744206,
+					"value" : 180927288960
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885041737559,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046738840,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051739881,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056741060,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061742128,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066743123,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071744204,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885041737557,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046738838,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051739878,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056741058,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061742125,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066743120,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071744201,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885041723325,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885046723372,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885051723692,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885056724166,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885061725784,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885066725798,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885071725848,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885041737556,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046738838,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051739876,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056741057,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061742123,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066743118,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071744199,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885041723351,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046723397,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051723716,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056724190,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061725811,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066725824,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071725874,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041736517,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046737522,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051738483,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056739345,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061740277,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066741341,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071742323,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041736516,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046737521,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051738482,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056739344,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061740276,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066741340,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071742322,
+					"value" : 0
+				}
+			],
+			"gpuId" : 2,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885041721108,
+					"value" : 40
+				},
+				{
+					"timestamp" : 1787885046721178,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885051721242,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885056721245,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885061721362,
+					"value" : 43
+				},
+				{
+					"timestamp" : 1787885066721437,
+					"value" : 43
+				},
+				{
+					"timestamp" : 1787885071721482,
+					"value" : 43
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885041721162,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046721228,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885051721293,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885056721296,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885061721413,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885066721487,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885071721533,
+					"value" : 100
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885041721000,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885046721074,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885051721139,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885056721144,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885061721258,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885066721260,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885071721310,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885041720929,
+					"value" : 37
+				},
+				{
+					"timestamp" : 1787885046721022,
+					"value" : 39
+				},
+				{
+					"timestamp" : 1787885051721089,
+					"value" : 39
+				},
+				{
+					"timestamp" : 1787885056721092,
+					"value" : 39
+				},
+				{
+					"timestamp" : 1787885061721208,
+					"value" : 39
+				},
+				{
+					"timestamp" : 1787885066721210,
+					"value" : 39
+				},
+				{
+					"timestamp" : 1787885071721265,
+					"value" : 39
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885041720137,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046720169,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051720232,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056720245,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061720247,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066720306,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071720313,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885041720783,
+					"value" : 239.583
+				},
+				{
+					"timestamp" : 1787885046720844,
+					"value" : 344.42000000000002
+				},
+				{
+					"timestamp" : 1787885051720885,
+					"value" : 344.52300000000002
+				},
+				{
+					"timestamp" : 1787885056720954,
+					"value" : 345.28500000000003
+				},
+				{
+					"timestamp" : 1787885061721070,
+					"value" : 345.14499999999998
+				},
+				{
+					"timestamp" : 1787885066721079,
+					"value" : 344.84300000000002
+				},
+				{
+					"timestamp" : 1787885071721128,
+					"value" : 345.59399999999999
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885041736517,
+					"value" : 180670103968
+				},
+				{
+					"timestamp" : 1787885046737522,
+					"value" : 180670103968
+				},
+				{
+					"timestamp" : 1787885051738483,
+					"value" : 180670103968
+				},
+				{
+					"timestamp" : 1787885056739345,
+					"value" : 180670103968
+				},
+				{
+					"timestamp" : 1787885061740277,
+					"value" : 180670103968
+				},
+				{
+					"timestamp" : 1787885066741342,
+					"value" : 180670103968
+				},
+				{
+					"timestamp" : 1787885071742324,
+					"value" : 180670103968
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885041736515,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046737520,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051738481,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056739343,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061740275,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066741339,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071742321,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885041736515,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046737520,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051738481,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056739343,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061740275,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066741339,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071742321,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885041720901,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885046720962,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885051720990,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885056721066,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885061721183,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885066721184,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885071721239,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885041736514,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046737519,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051738480,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056739342,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061740274,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066741338,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071742320,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885041722729,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046722787,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051722916,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056722956,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061722980,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066723034,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071723148,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041735606,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046736418,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051737399,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056738278,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061739128,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066740037,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071741026,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041735607,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046736419,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051737401,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056738280,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061739129,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066740038,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071741027,
+					"value" : 0
+				}
+			],
+			"gpuId" : 1,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885041723272,
+					"value" : 44
+				},
+				{
+					"timestamp" : 1787885046723323,
+					"value" : 47
+				},
+				{
+					"timestamp" : 1787885051723643,
+					"value" : 47
+				},
+				{
+					"timestamp" : 1787885056724116,
+					"value" : 47
+				},
+				{
+					"timestamp" : 1787885061725733,
+					"value" : 47
+				},
+				{
+					"timestamp" : 1787885066725744,
+					"value" : 47
+				},
+				{
+					"timestamp" : 1787885071725795,
+					"value" : 47
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885041722515,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046722583,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885051722713,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885056722755,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885061722779,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885066722831,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885071722938,
+					"value" : 100
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885041722432,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885046722503,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885051722634,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885056722675,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885061722704,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885066722751,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885071722862,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885041720076,
+					"value" : 41
+				},
+				{
+					"timestamp" : 1787885046720139,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885051720203,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885056720210,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885061720215,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885066720274,
+					"value" : 42
+				},
+				{
+					"timestamp" : 1787885071720281,
+					"value" : 42
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885041722783,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046722838,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051722966,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056723014,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061723038,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066723086,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071723197,
+					"value" : 0
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885041720874,
+					"value" : 247.75399999999999
+				},
+				{
+					"timestamp" : 1787885046720926,
+					"value" : 347.29700000000003
+				},
+				{
+					"timestamp" : 1787885051720961,
+					"value" : 347.64400000000001
+				},
+				{
+					"timestamp" : 1787885056721039,
+					"value" : 346.62400000000002
+				},
+				{
+					"timestamp" : 1787885061721156,
+					"value" : 347.55799999999999
+				},
+				{
+					"timestamp" : 1787885066721159,
+					"value" : 348.036
+				},
+				{
+					"timestamp" : 1787885071721210,
+					"value" : 348.15300000000002
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885041735608,
+					"value" : 180655096672
+				},
+				{
+					"timestamp" : 1787885046736420,
+					"value" : 180655096672
+				},
+				{
+					"timestamp" : 1787885051737402,
+					"value" : 180655096672
+				},
+				{
+					"timestamp" : 1787885056738281,
+					"value" : 180655096672
+				},
+				{
+					"timestamp" : 1787885061739130,
+					"value" : 180655096672
+				},
+				{
+					"timestamp" : 1787885066740039,
+					"value" : 180655096672
+				},
+				{
+					"timestamp" : 1787885071741028,
+					"value" : 180655096672
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885041735606,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046736418,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051737400,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056738279,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061739129,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066740037,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071741026,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885041735607,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046736420,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051737401,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056738280,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061739130,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066740038,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071741028,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885041722405,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885046722477,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885051722611,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885056722649,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885061722680,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885066722725,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885071722835,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885041735604,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046736417,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051737398,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056738277,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061739127,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066740035,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071741024,
+					"value" : 0
+				}
+			]
+		},
+		{
+			"bytes_copied_per_op" : 
+			[
+				{
+					"timestamp" : 1787885041656832,
+					"value" : 19660800.0
+				}
+			],
+			"current_clocks_event_reasons" : 
+			[
+				{
+					"timestamp" : 1787885041721026,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046721099,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051721163,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056721169,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061721283,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066721284,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071721333,
+					"value" : 0
+				}
+			],
+			"ecc_dbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041732321,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046733315,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051734331,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056735351,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061736361,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066737492,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071738458,
+					"value" : 0
+				}
+			],
+			"ecc_sbe_volatile_total" : 
+			[
+				{
+					"timestamp" : 1787885041732323,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046733316,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051734332,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056735352,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061736362,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066737493,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071738459,
+					"value" : 0
+				}
+			],
+			"flops_per_op" : 
+			[
+				{
+					"timestamp" : 1787885041656827,
+					"value" : 4194304000.0
+				}
+			],
+			"gpuId" : 0,
+			"gpu_temp" : 
+			[
+				{
+					"timestamp" : 1787885041722597,
+					"value" : 30
+				},
+				{
+					"timestamp" : 1787885046722660,
+					"value" : 32
+				},
+				{
+					"timestamp" : 1787885051722791,
+					"value" : 32
+				},
+				{
+					"timestamp" : 1787885056722832,
+					"value" : 32
+				},
+				{
+					"timestamp" : 1787885061722854,
+					"value" : 33
+				},
+				{
+					"timestamp" : 1787885066722908,
+					"value" : 33
+				},
+				{
+					"timestamp" : 1787885071723022,
+					"value" : 33
+				}
+			],
+			"gpu_utilization" : 
+			[
+				{
+					"timestamp" : 1787885041720815,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046720871,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885051720910,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885056720980,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885061721102,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885066721106,
+					"value" : 100
+				},
+				{
+					"timestamp" : 1787885071721156,
+					"value" : 100
+				}
+			],
+			"memory_clock" : 
+			[
+				{
+					"timestamp" : 1787885041721135,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885046721203,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885051721267,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885056721270,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885061721387,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885066721462,
+					"value" : 3996
+				},
+				{
+					"timestamp" : 1787885071721507,
+					"value" : 3996
+				}
+			],
+			"memory_temp" : 
+			[
+				{
+					"timestamp" : 1787885041722756,
+					"value" : 29
+				},
+				{
+					"timestamp" : 1787885046722813,
+					"value" : 29
+				},
+				{
+					"timestamp" : 1787885051722942,
+					"value" : 29
+				},
+				{
+					"timestamp" : 1787885056722979,
+					"value" : 29
+				},
+				{
+					"timestamp" : 1787885061723012,
+					"value" : 30
+				},
+				{
+					"timestamp" : 1787885066723060,
+					"value" : 30
+				},
+				{
+					"timestamp" : 1787885071723173,
+					"value" : 30
+				}
+			],
+			"nops_so_far" : 
+			[
+				{
+					"timestamp" : 1787885042657660,
+					"value" : 2800
+				},
+				{
+					"timestamp" : 1787885043658141,
+					"value" : 4800
+				},
+				{
+					"timestamp" : 1787885044658548,
+					"value" : 6900
+				},
+				{
+					"timestamp" : 1787885045658746,
+					"value" : 9200
+				},
+				{
+					"timestamp" : 1787885046659110,
+					"value" : 11200
+				},
+				{
+					"timestamp" : 1787885047662940,
+					"value" : 13500
+				},
+				{
+					"timestamp" : 1787885048663798,
+					"value" : 15600
+				},
+				{
+					"timestamp" : 1787885049664042,
+					"value" : 17600
+				},
+				{
+					"timestamp" : 1787885050666735,
+					"value" : 20000
+				},
+				{
+					"timestamp" : 1787885051667200,
+					"value" : 22000
+				},
+				{
+					"timestamp" : 1787885052667379,
+					"value" : 24000
+				},
+				{
+					"timestamp" : 1787885053667467,
+					"value" : 26400
+				},
+				{
+					"timestamp" : 1787885054668147,
+					"value" : 28400
+				},
+				{
+					"timestamp" : 1787885055668427,
+					"value" : 30400
+				},
+				{
+					"timestamp" : 1787885056668491,
+					"value" : 32800
+				},
+				{
+					"timestamp" : 1787885057668549,
+					"value" : 34800
+				},
+				{
+					"timestamp" : 1787885058669521,
+					"value" : 36800
+				},
+				{
+					"timestamp" : 1787885059670519,
+					"value" : 39200
+				},
+				{
+					"timestamp" : 1787885060670649,
+					"value" : 41200
+				},
+				{
+					"timestamp" : 1787885061671144,
+					"value" : 43200
+				},
+				{
+					"timestamp" : 1787885062672480,
+					"value" : 45600
+				},
+				{
+					"timestamp" : 1787885063672795,
+					"value" : 47600
+				},
+				{
+					"timestamp" : 1787885064673758,
+					"value" : 49600
+				},
+				{
+					"timestamp" : 1787885065674598,
+					"value" : 52000
+				},
+				{
+					"timestamp" : 1787885066674625,
+					"value" : 54000
+				},
+				{
+					"timestamp" : 1787885067674993,
+					"value" : 56000
+				},
+				{
+					"timestamp" : 1787885068676023,
+					"value" : 58400
+				},
+				{
+					"timestamp" : 1787885069676102,
+					"value" : 60400
+				},
+				{
+					"timestamp" : 1787885070676207,
+					"value" : 62400
+				}
+			],
+			"num_cuda_streams" : 
+			[
+				{
+					"timestamp" : 1787885041656833,
+					"value" : 8
+				}
+			],
+			"pcie_replay_counter" : 
+			[
+				{
+					"timestamp" : 1787885041721731,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046721884,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051721914,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056721952,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061722008,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066722134,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071722217,
+					"value" : 0
+				}
+			],
+			"perf_gflops" : 
+			[
+				{
+					"timestamp" : 1787885042657655,
+					"value" : 11735.002976593612
+				},
+				{
+					"timestamp" : 1787885043658139,
+					"value" : 10060.016761417948
+				},
+				{
+					"timestamp" : 1787885044658546,
+					"value" : 9641.5577258716694
+				},
+				{
+					"timestamp" : 1787885045658745,
+					"value" : 9642.4128373872372
+				},
+				{
+					"timestamp" : 1787885046659107,
+					"value" : 9391.0638739415681
+				},
+				{
+					"timestamp" : 1787885047662937,
+					"value" : 9427.6745918503002
+				},
+				{
+					"timestamp" : 1787885048663797,
+					"value" : 9338.0841031863929
+				},
+				{
+					"timestamp" : 1787885049664035,
+					"value" : 9219.2280910488007
+				},
+				{
+					"timestamp" : 1787885050666726,
+					"value" : 9310.4940968619867
+				},
+				{
+					"timestamp" : 1787885051667198,
+					"value" : 9217.9614059145952
+				},
+				{
+					"timestamp" : 1787885052667377,
+					"value" : 9142.4875919293409
+				},
+				{
+					"timestamp" : 1787885053667465,
+					"value" : 9219.339634569491
+				},
+				{
+					"timestamp" : 1787885054668146,
+					"value" : 9155.0100327914588
+				},
+				{
+					"timestamp" : 1787885055668426,
+					"value" : 9100.1290832450977
+				},
+				{
+					"timestamp" : 1787885056668490,
+					"value" : 9164.4539166233935
+				},
+				{
+					"timestamp" : 1787885057668548,
+					"value" : 9115.9657101512676
+				},
+				{
+					"timestamp" : 1787885058669519,
+					"value" : 9072.6919092507324
+				},
+				{
+					"timestamp" : 1787885059670518,
+					"value" : 9127.3490851861534
+				},
+				{
+					"timestamp" : 1787885060670647,
+					"value" : 9088.4337438237453
+				},
+				{
+					"timestamp" : 1787885061671143,
+					"value" : 9053.2420858066725
+				},
+				{
+					"timestamp" : 1787885062672478,
+					"value" : 9100.8734918068076
+				},
+				{
+					"timestamp" : 1787885063672794,
+					"value" : 9068.3909891807652
+				},
+				{
+					"timestamp" : 1787885064673757,
+					"value" : 9038.4770971678336
+				},
+				{
+					"timestamp" : 1787885065674597,
+					"value" : 9080.9565159304693
+				},
+				{
+					"timestamp" : 1787885066674624,
+					"value" : 9053.2724338195876
+				},
+				{
+					"timestamp" : 1787885067674991,
+					"value" : 9027.5985322472316
+				},
+				{
+					"timestamp" : 1787885068676021,
+					"value" : 9065.6986733205376
+				},
+				{
+					"timestamp" : 1787885069676101,
+					"value" : 9041.5075293000227
+				},
+				{
+					"timestamp" : 1787885070676205,
+					"value" : 9018.9763543174777
+				}
+			],
+			"power_usage" : 
+			[
+				{
+					"timestamp" : 1787885041722460,
+					"value" : 236.87299999999999
+				},
+				{
+					"timestamp" : 1787885046722529,
+					"value" : 330.66199999999998
+				},
+				{
+					"timestamp" : 1787885051722660,
+					"value" : 330.13799999999998
+				},
+				{
+					"timestamp" : 1787885056722701,
+					"value" : 330.80099999999999
+				},
+				{
+					"timestamp" : 1787885061722729,
+					"value" : 330.69099999999997
+				},
+				{
+					"timestamp" : 1787885066722777,
+					"value" : 331.11500000000001
+				},
+				{
+					"timestamp" : 1787885071722887,
+					"value" : 330.67200000000003
+				}
+			],
+			"power_violation" : 
+			[
+				{
+					"timestamp" : 1787885041732324,
+					"value" : 180606186336
+				},
+				{
+					"timestamp" : 1787885046733317,
+					"value" : 180606186336
+				},
+				{
+					"timestamp" : 1787885051734332,
+					"value" : 180606186336
+				},
+				{
+					"timestamp" : 1787885056735353,
+					"value" : 180606186336
+				},
+				{
+					"timestamp" : 1787885061736363,
+					"value" : 180606186336
+				},
+				{
+					"timestamp" : 1787885066737494,
+					"value" : 180606186336
+				},
+				{
+					"timestamp" : 1787885071738460,
+					"value" : 180606186336
+				}
+			],
+			"row_remap_failure" : 
+			[
+				{
+					"timestamp" : 1787885041732323,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046733316,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051734332,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056735352,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061736362,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066737493,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071738459,
+					"value" : 0
+				}
+			],
+			"row_remap_pending" : 
+			[
+				{
+					"timestamp" : 1787885041732319,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046733314,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051734330,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056735350,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061736360,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066737491,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071738457,
+					"value" : 0
+				}
+			],
+			"sm_clock" : 
+			[
+				{
+					"timestamp" : 1787885041722623,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885046722685,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885051722815,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885056722856,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885061722878,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885066722932,
+					"value" : 2032
+				},
+				{
+					"timestamp" : 1787885071723047,
+					"value" : 2032
+				}
+			],
+			"thermal_violation" : 
+			[
+				{
+					"timestamp" : 1787885041732316,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885046733313,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885051734329,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885056735349,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885061736360,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885066737490,
+					"value" : 0
+				},
+				{
+					"timestamp" : 1787885071738456,
+					"value" : 0
+				}
+			],
+			"try_ops_per_sec" : 
+			[
+				{
+					"timestamp" : 1787885041656834,
+					"value" : 8779.7641754150391
+				}
+			]
+		}
+	]
+}
