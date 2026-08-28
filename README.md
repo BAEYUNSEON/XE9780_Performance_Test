@@ -808,10 +808,323 @@ slurm-wlm 23.11.4
 ### 1.1 DCGM 진단 (하드웨어 기본 상태 확인)
 - **벤치마그 전에 GPU 자체에 결함(ECC에러, 온도, 전력, PCIe재훈련 등)이 없는지 먼저 걸러내는 단계**
 ```bash
-# 드라이버가 보고하는 CUDA 메이저 버전 자동 추출
-CUDA_VERSION=$(nvidia-smi | sed -E -n 's/.*CUDA Version: ([0-9]+)[.].*/\1/p')
-echo $CUDA_VERSION   # 13이 나와야 정상
+dell@dell:~$ sudo systemctl enable --now nvidia-dcgm
+Created symlink /etc/systemd/system/dcgm.service → /usr/lib/systemd/system/nvidia-dcgm.service.
+dell@dell:~$ dcgmi --version
 
-sudo apt-get update
+dcgmi  version: 4.6.1
+
+dell@dell:~$ dcgmi discovery -l
+7 GPUs found (Active).
++--------+----------------------------------------------------------------------+
+| GPU ID | Device Information                                                   |
++--------+----------------------------------------------------------------------+
+| 0      | Name: NVIDIA B300 SXM6 AC                                            |
+|        | PCI Bus ID: 00000000:1A:00.0                                         |
+|        | Device UUID: GPU-bce5282f-d716-d136-5759-b7181a7a55df                |
++--------+----------------------------------------------------------------------+
+| 1      | Name: NVIDIA B300 SXM6 AC                                            |
+|        | PCI Bus ID: 00000000:69:00.0                                         |
+|        | Device UUID: GPU-d6fcaafa-e017-734b-43a5-9f5953cf7150                |
++--------+----------------------------------------------------------------------+
+| 2      | Name: NVIDIA B300 SXM6 AC                                            |
+|        | PCI Bus ID: 00000000:DB:00.0                                         |
+|        | Device UUID: GPU-63702342-9bed-efb1-1262-10971a1218cd                |
++--------+----------------------------------------------------------------------+
+| 3      | Name: NVIDIA B300 SXM6 AC                                            |
+|        | PCI Bus ID: 00000001:1A:00.0                                         |
+|        | Device UUID: GPU-50db20c5-bd33-c81d-2eea-d6f6b623c0f4                |
++--------+----------------------------------------------------------------------+
+| 4      | Name: NVIDIA B300 SXM6 AC                                            |
+|        | PCI Bus ID: 00000001:69:00.0                                         |
+|        | Device UUID: GPU-fa889c02-065e-66b6-15a8-e052e6fe3743                |
++--------+----------------------------------------------------------------------+
+| 5      | Name: NVIDIA B300 SXM6 AC                                            |
+|        | PCI Bus ID: 00000001:B5:00.0                                         |
+|        | Device UUID: GPU-1ba19bc3-3adc-acaf-5b88-5c623b05a799                |
++--------+----------------------------------------------------------------------+
+| 6      | Name: NVIDIA B300 SXM6 AC                                            |
+|        | PCI Bus ID: 00000001:DB:00.0                                         |
+|        | Device UUID: GPU-07634869-498e-829a-ecb5-9f1611c125fb                |
++--------+----------------------------------------------------------------------+
+0 NvSwitches found.
++-----------+
+| Switch ID |
++-----------+
++-----------+
+0 ConnectX found.
++----------+
+| ConnectX |
++----------+
++----------+
+```
+
+```bash
+dell@dell:~$ dcgmi diag -r 3 -i 0,1,2,3,4,5,6
+# DCGM CLI 클라이언트 -  백그라운드에서 도는 nv-hostengine 데몬에 명령을 보내는 도구 
+# diag : diagnostic(진단) 서브커멘드 실행
+# -r 3 : RUN Level3 - 지정 진단 강도 단계 1:(수 초) 기본 헬스 체크, 2:(수 분) 통합테스트, 3: (수십 분) 메모리, SM연산, PCIe, NVLink, 전원, 온도 까지 부하걸며 심층 진단 
+
+dell@dell:~$ dcgmi diag -r 3 -i 0,1,2,3,4,5,6
+
+
+
+
+
+
+Successfully ran diagnostic for group.
++---------------------------+------------------------------------------------+
+| Diagnostic                | Result                                         |
++===========================+================================================+
+|-----  Metadata  ----------+------------------------------------------------|
+| DCGM Version              | 4.6.1                                          |
+| Driver Version Detected   | 610.57.04                                      |
+| GPU Device IDs Detected   | 3182, 3182, 3182, 3182, 3182, 3182, 3182       |
+|-----  Deployment  --------+------------------------------------------------|
+| software                  | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++-----  Hardware  ----------+------------------------------------------------+
+| memory                    | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| diagnostic                | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| nvbandwidth               | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++-----  Integration  -------+------------------------------------------------+
+| pcie                      | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++-----  Stress  ------------+------------------------------------------------+
+| memory_bandwidth          | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| targeted_stress           | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| targeted_power            | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++---------------------------+------------------------------------------------+
+
+```
+
+**-r 3  수십분으로 신규 Session 으로 상태 확인**
+```bash
+# GPU 사용률/온도/전력이 움직이지는지 실시간 확인 - 값이 움직이면 진단이 실제 부하를 걸고 있다는 것으로 판단
+dell@dell:~$ watch -n 2 nvidia-smi --query-gpu=index,utilization.gpu,temperature.gpu,power.draw --format=csv
+Every 2.0s: nvidia-smi --query-gpu=index,utilization.gpu,temperature.gpu,power.draw --format=csv                                          dell: Fri Aug 28 02:45:16 2026
+
+index, utilization.gpu [%], temperature.gpu, power.draw [W]
+0, 100 %, 54, 1092.26 W
+1, 100 %, 67, 1089.42 W
+2, 100 %, 62, 1091.53 W
+3, 100 %, 55, 1086.37 W
+4, 100 %, 70, 1087.71 W
+5, 100 %, 53, 1085.55 W
+6, 100 %, 66, 1087.95 W
+
+# nv-hostengine 살아있는지 확인 
+dell@dell:~$ ps aux | grep nv-hostengine
+root      101479  2.3  0.0 1354672 75164 ?       Ssl  02:18   0:38 /usr/bin/nv-hostengine -n --service-account nvidia-dcgm
+dell      104810  0.0  0.0   6676  2476 pts/4    S+   02:45   0:00 grep --color=auto nv-hostengine
+
+# dcgmi diag 관련 자식 프로세스가 떠 있는지 확인
+dell@dell:~$ ps aux | grep dcgm
+root      101479  2.3  0.0 1420208 84480 ?       Ssl  02:18   0:39 /usr/bin/nv-hostengine -n --service-account nvidia-dcgm
+dell      104819  0.0  0.0   6544  2472 pts/4    S+   02:47   0:00 grep --color=auto dcgm
+
+```
+
+**nvidia-dcgm logs**
+```bash
+
+dell@dell:~$ ls -la /var/log/nvidia-dcgm/
+total 4440
+drwxr-xr-x  2 nvidia-dcgm nvidia-dcgm    4096 Aug 28 02:46 .
+drwxrwxr-x 13 root        syslog         4096 Aug 28 01:36 ..
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm   42808 Aug 28 02:40 dcgm_nvbandwidth.log
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm 1795858 Aug 28 02:46 nvvs.log
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm  294061 Aug 28 02:26 stats_diagnostic.json
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm   17196 Aug 28 02:43 stats_memory_bandwidth.json
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm  859509 Aug 28 02:40 stats_nvbandwidth.json
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm 1274401 Aug 28 02:43 stats_pcie.json
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm  180387 Aug 28 02:46 stats_targeted_power.json
+-rw-r--r--  1 nvidia-dcgm nvidia-dcgm   56352 Aug 28 02:44 stats_targeted_stress.json
+```
+
+**Result:** GPU 7장의 B300은  소프트웨어 스택 정상, 메모리 무결성 정상, PCIe 링크 정상, 대역폭/연산성능/전력안정성까지 목표치 도달하며 오류없음이 확인 된 상태
+
+- **GPU Burn 장시간 지속성 테스트:**
+**DCGM Level3가 검증 못하는 영역을 채워주는 보완테스트로 30분~수시간 이상의 임의 설정이 가능하며 그 부하를 오래 지속했을때도 안정적인지 확인(지속성/열 축적확인), 랙 전체가 장시간 최대 부하일때 랙 레벨 냉각 설계가 버티는지도 드러남**
+
+**Result:** 의미로 이 서버를 실제 GenAI학습 워크로드로 며칠씩 돌려도 스로틀링/셧다운 없이 버틸 수 있는지 알 수 있습니다. 
+
+```bash
+dell@dell:~$ sudo apt install -y build-essential git
+[sudo] password for dell:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+build-essential is already the newest version (12.10ubuntu1).
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+0 upgraded, 0 newly installed, 0 to remove and 58 not upgraded.
+dell@dell:~$
+dell@dell:~$
+dell@dell:~$ git clone https://github.com/wilicc/gpu-burn.git
+Cloning into 'gpu-burn'...
+remote: Enumerating objects: 319, done.
+remote: Counting objects: 100% (188/188), done.
+remote: Compressing objects: 100% (72/72), done.
+remote: Total 319 (delta 157), reused 116 (delta 116), pack-reused 131 (from 1)
+Receiving objects: 100% (319/319), 105.18 KiB | 780.00 KiB/s, done.
+Resolving deltas: 100% (187/187), done.
+dell@dell:~$
+dell@dell:~$
+dell@dell:~$
+dell@dell:~$ cd gpu-burn/
+dell@dell:~/gpu-burn$
+dell@dell:~/gpu-burn$
+dell@dell:~/gpu-burn$
+dell@dell:~/gpu-burn$ make
+g++ -O3 -Wno-unused-result -I/usr/local/cuda/include -std=c++11 -DIS_JETSON=false -c gpu_burn-drv.cpp
+PATH="/home/dell/.local/bin:/home/dell/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin::." /usr/local/cuda/bin/nvcc -I/usr/local/cuda/include -arch=compute_75 -fatbin compare.cu -o compare.fatbin
+g++ -o gpu_burn gpu_burn-drv.o -O3 -lcuda -L/usr/local/cuda/lib64 -L/usr/local/cuda/lib64/stubs -L/usr/local/cuda/lib -L/usr/local/cuda/lib/stubs -Wl,-rpath=/usr/local/cuda/lib64 -Wl,-rpath=/usr/local/cuda/lib -lcublas -lcudart
+dell@dell:~/gpu-burn$
+dell@dell:~/gpu-burn$
+dell@dell:~/gpu-burn$
+dell@dell:~/gpu-burn$
+dell@dell:~/gpu-burn$ mkdir -p ~/gpu_burn_test/$(date +%Y%m%d_%H%M)
+dell@dell:~/gpu-burn$ cd ~/gpu_burn_test/20260828_0456/
+dell@dell:~/gpu_burn_test/20260828_0456$
+dell@dell:~/gpu_burn_test/20260828_0456$
+dell@dell:~/gpu_burn_test/20260828_0456$ cd ..
+dell@dell:~/gpu_burn_test$ cd ..
+dell@dell:~$ cd gpu_burn
+-bash: cd: gpu_burn: No such file or directory
+dell@dell:~$ cd ~/gpu_burn/
+-bash: cd: /home/dell/gpu_burn/: No such file or directory
+dell@dell:~$ ls
+cuda-keyring_1.1-1_all.deb  gpu-burn  gpu_burn_test
+dell@dell:~$ cd gpu-burn/
+dell@dell:~/gpu-burn$ cd ..
+dell@dell:~$ mv gpu-burn/ gpu_burn
+dell@dell:~$ ls
+cuda-keyring_1.1-1_all.deb  gpu_burn  gpu_burn_test
+dell@dell:~$ cd gpu_burn
+dell@dell:~/gpu_burn$ CUDA_VISIBLE_DEVICE=0,1,2,3,4,5,6 ./gpu_burn 600 2>&1 | tee ~/gpu_burn_test/gpu_burn_$(date +%Y%m%d_%H%M).log
+GPU 0: NVIDIA B300 SXM6 AC (UUID: GPU-bce5282f-d716-d136-5759-b7181a7a55df)
+GPU 1: NVIDIA B300 SXM6 AC (UUID: GPU-d6fcaafa-e017-734b-43a5-9f5953cf7150)
+GPU 2: NVIDIA B300 SXM6 AC (UUID: GPU-63702342-9bed-efb1-1262-10971a1218cd)
+GPU 3: NVIDIA B300 SXM6 AC (UUID: GPU-50db20c5-bd33-c81d-2eea-d6f6b623c0f4)
+GPU 4: NVIDIA B300 SXM6 AC (UUID: GPU-fa889c02-065e-66b6-15a8-e052e6fe3743)
+GPU 5: NVIDIA B300 SXM6 AC (UUID: GPU-1ba19bc3-3adc-acaf-5b88-5c623b05a799)
+GPU 6: NVIDIA B300 SXM6 AC (UUID: GPU-07634869-498e-829a-ecb5-9f1611c125fb)
+cuInit returned 0 (no error)
+cuInit returned 0 (no error)
+cuInit returned 0 (no error)
+cuInit returned 0 (no error)
+cuInit returned 0 (no error)
+cuInit returned 0 (no error)
+cuInit returned 0 (no error)
+......
+Using compare file: compare.fatbin
+Burning for 600 seconds.
+Initialized device 0 with 274101 MB of memory (273403 MB available, using 246063 MB of it), using FLOATS
+Results are 268435456 bytes each, thus performing 959 iterations
+Freed memory for dev 0
+Uninitted cublas
+Using compare file: compare.fatbin
+Burning for 600 seconds.
+Initialized device 2 with 274101 MB of memory (273403 MB available, using 246063 MB of it), using FLOATS
+Results are 268435456 bytes each, thus performing 959 iterations
+Freed memory for dev 2
+Uninitted cublas
+Using compare file: compare.fatbin
+Burning for 600 seconds.
+Initialized device 4 with 274101 MB of memory (273403 MB available, using 246063 MB of it), using FLOATS
+Results are 268435456 bytes each, thus performing 959 iterations
+Freed memory for dev 4
+Uninitted cublas
+Using compare file: compare.fatbin
+Burning for 600 seconds.
+Initialized device 5 with 274101 MB of memory (273403 MB available, using 246063 MB of it), using FLOATS
+Results are 268435456 bytes each, thus performing 959 iterations
+Freed memory for dev 5
+Uninitted cublas
+Using compare file: compare.fatbin
+Burning for 600 seconds.
+Initialized device 3 with 274101 MB of memory (273403 MB available, using 246063 MB of it), using FLOATS
+Results are 268435456 bytes each, thus performing 959 iterations
+Freed memory for dev 3
+Uninitted cublas
+Using compare file: compare.fatbin
+Burning for 600 seconds.
+Initialized device 6 with 274101 MB of memory (273403 MB available, using 246063 MB of it), using FLOATS
+Results are 268435456 bytes each, thus performing 959 iterations
+Freed memory for dev 6
+Uninitted cublas
+Using compare file: compare.fatbin
+Burning for 600 seconds.
+Initialized device 1 with 274101 MB of memory (273403 MB available, using 246063 MB of it), using FLOATS
+Results are 268435456 bytes each, thus performing 959 iterations
+Freed memory for dev 1
+Uninitted cublas
+done
+
+Tested 7 GPUs:
+        GPU 0: OK
+        GPU 1: OK
+        GPU 2: OK
+        GPU 3: OK
+        GPU 4: OK
+        GPU 5: OK
+        GPU 6: OK
+```
+
+### 1.2 
 sudo apt-get install --yes --install-recommends datacenter-gpu-manager-4-cuda${CUDA_VERSION}
 ```
