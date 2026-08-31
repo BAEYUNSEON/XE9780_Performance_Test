@@ -504,3 +504,121 @@ index, utilization.gpu [%], temperature.gpu, power.draw [W]
 5, 0 %, 30, 183.25 W
 6, 0 %, 39, 184.35 W
 ```
+
+
+
+## Phase3 - Performance Test gpu_burn 72h
+### 3-1 gpu_burn test 
+
+**왜 tmux인가**: `nohup`도 되지만, 72시간짜리 테스트는 중간에 다시 접속해서 실시간 출력을 직접 보고 싶은 경우가 많습니다. tmux는 세션을 유지한 채로 언제든 재접속(attach)해서 진행 상황을 볼 수 있어 장시간 테스트에 가장 실무적입니다.
+
+```bash
+# tmux 설치 (없다면)
+sudo apt install -y tmux
+
+# 새 세션 생성 (세션 이름: gpuburn72h)
+tmux new -s gpuburn72h
+```
+
+**tmux 세션 안에서 72시간(259200초) 실행**
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ~/gpu-burn/gpu_burn -d 259200 2>&1 | tee -a ~/gpu_burn_test/burn72h_$(date +%Y%m%d_%H%M).log
+```
+
+**세션에서 빠져나가기(테스트는 계속 돎)**
+```
+Ctrl+B, 그다음 D
+```
+→ SSH 접속이 끊기거나 로컬 PC를 꺼도 서버 안에서는 계속 실행됩니다.
+
+**나중에 다시 접속해서 확인**
+```bash
+ssh dell@<서버IP>
+tmux attach -t gpuburn72h
+
+## 1 세션 종료와 무관하게 계속 실행 — tmux 사용 (추천)
+
+**왜 tmux인가**: `nohup`도 되지만, 72시간짜리 테스트는 중간에 다시 접속해서 실시간 출력을 직접 보고 싶은 경우가 많습니다. tmux는 세션을 유지한 채로 언제든 재접속(attach)해서 진행 상황을 볼 수 있어 장시간 테스트에 가장 실무적입니다.
+
+```bash
+# tmux 설치 (없다면)
+sudo apt install -y tmux
+
+# 새 세션 생성 (세션 이름: gpuburn72h)
+tmux new -s gpuburn72h
+```
+
+**tmux 세션 안에서 72시간(259200초) 실행**
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ~/gpu-burn/gpu_burn -d 259200 2>&1 | tee -a ~/gpu_burn_test/burn72h_$(date +%Y%m%d_%H%M).log
+```
+
+**세션에서 빠져나가기(테스트는 계속 돎)**
+```
+Ctrl+B, 그다음 D
+```
+→ SSH 접속이 끊기거나 로컬 PC를 꺼도 서버 안에서는 계속 실행됩니다.
+
+**나중에 다시 접속해서 확인**
+```bash
+ssh dell@<서버IP>
+tmux attach -t gpuburn72h
+```
+
+## 2) 병행할 모니터링도 별도 tmux 창(pane)으로 함께 실행
+
+```bash
+# 같은 세션 안에서 새 창 추가
+tmux new-window -t gpuburn72h
+
+nvidia-smi --query-gpu=timestamp,index,temperature.gpu,power.draw,clocks.sm,utilization.gpu \
+  --format=csv -l 60 -f ~/gpu_burn_test/burn72h_monitor_$(date +%Y%m%d_%H%M).csv
+```
+- `-l 60`: 72시간 로그이므로 5초 간격은 파일이 너무 커집니다 → **60초 간격**으로 조정 (72시간이면 약 4,320줄, 관리 가능한 크기)
+
+## 3) 로그 파일 용량 관리 (72시간이면 gpu_burn 자체 로그도 상당히 커질 수 있음)
+
+gpu_burn은 주기적으로 상태 라인을 출력하므로, 72시간이면 수만 줄이 쌓일 수 있습니다. 디스크 공간 미리 확인하고, 필요시 로그 로테이션을 걸어두는 게 안전합니다.
+
+```bash
+# 디스크 여유 공간 확인
+df -h ~
+
+# 실행 중간에라도 로그가 너무 커지면 압축 보관 (테스트 방해 없이 가능)
+gzip -k ~/gpu_burn_test/burn72h_*.log
+```
+
+## 4) 중간 점검 체크리스트 (72시간 동안 최소 하루 1~2회 권장)
+
+```bash
+# 1) 프로세스가 살아있는지 확인
+ps aux | grep gpu_burn
+
+# 2) 지금까지 에러 발생 여부 확인 (죽이지 않고 확인 가능)
+grep -i "error" ~/gpu_burn_test/burn72h_*.log | grep -v "errors: 0"
+
+# 3) 온도 추이 중간 확인 (모니터링 CSV 최근 값)
+tail -20 ~/gpu_burn_test/burn72h_monitor_*.csv
+
+# 4) iDRAC SEL도 중간중간 확인 (전원/온도 하드웨어 경고 여부)
+racadm getsel | tail -30
+```
+
+## 5) 시스템 자체 안정성 대비 (72시간 장기 실행 시 놓치기 쉬운 부분)
+
+- **디스플레이/절전 설정 무관**: 서버는 headless라 상관없지만, 혹시 automatic reboot 스케줄(예: unattended-upgrades로 인한 자동 재부팅)이 걸려있는지 미리 확인하세요.
+```bash
+sudo systemctl status unattended-upgrades
+cat /etc/apt/apt.conf.d/50unattended-upgrades | grep -i reboot
+```
+자동 재부팅이 활성화돼 있으면 72시간 도중 테스트가 끊길 수 있으므로, 테스트 기간에는 일시적으로 비활성화하시는 걸 권장합니다.
+
+- **SSH 연결 자체의 타임아웃**: tmux를 쓰면 연결이 끊겨도 테스트엔 지장 없지만, 혹시 재접속이 자꾸 안 되는 문제가 있다면 서버 쪽 `/etc/ssh/sshd_config`의 `ClientAliveInterval` 설정도 참고하세요 (필수는 아님).
+
+## 6) (선택) tmux보다 더 견고하게 하고 싶다면 — systemd 서비스로 등록
+
+재부팅 후에도 자동 재개, 로그를 journald로 통합 관리하고 싶으시면 systemd 서비스로 등록하는 방법도 있습니다. 이 방식이 필요하시면 별도로 유닛 파일 작성법을 안내해 드릴 수 있습니다.
+
+---
+
+**요약 추천**: `tmux new -s gpuburn72h` 세션 안에서 `-d 259200`으로 실행 + 별도 tmux 창에서 60초 간격 모니터링 CSV 기록. 이 조합이면 세션이 끊겨도 문제없고, 중간에 언제든 접속해서 진행 상황 확인 가능합니다.
