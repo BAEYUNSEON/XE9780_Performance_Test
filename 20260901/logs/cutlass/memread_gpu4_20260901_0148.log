@@ -1,0 +1,646 @@
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5876875.170 0.00073     0.00313     0.00205     
+Mul         5694649.503 0.00075     0.00315     0.00206     
+Add         6538912.988 0.00099     0.00338     0.00230     
+Triad       6482754.227 0.00099     0.00339     0.00235     
+Dot         6362848.527 0.00068     0.00308     0.00202     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5878041.408 0.00073     0.00310     0.00295     
+Mul         5694339.950 0.00075     0.00312     0.00296     
+Add         6490317.032 0.00099     0.00335     0.00321     
+Triad       6492737.194 0.00099     0.00336     0.00321     
+Dot         6316434.909 0.00068     0.00309     0.00292     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5888154.774 0.00073     0.00310     0.00199     
+Mul         5700439.045 0.00075     0.00312     0.00201     
+Add         6499038.068 0.00099     0.00337     0.00227     
+Triad       6541528.941 0.00098     0.00336     0.00227     
+Dot         6374246.506 0.00067     0.00305     0.00199     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5890714.813 0.00073     0.00308     0.00206     
+Mul         5700514.704 0.00075     0.00310     0.00209     
+Add         6495879.553 0.00099     0.00334     0.00234     
+Triad       6539928.579 0.00099     0.00334     0.00232     
+Dot         6375618.523 0.00067     0.00303     0.00202     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5886694.046 0.00073     0.00309     0.00175     
+Mul         5702785.418 0.00075     0.00311     0.00178     
+Add         6503479.597 0.00099     0.00335     0.00203     
+Triad       6535629.413 0.00099     0.00335     0.00204     
+Dot         6389038.581 0.00067     0.00304     0.00173     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5889050.938 0.00073     0.00309     0.00257     
+Mul         5699432.966 0.00075     0.00311     0.00260     
+Add         6521009.546 0.00099     0.00335     0.00284     
+Triad       6519274.070 0.00099     0.00335     0.00285     
+Dot         6416125.581 0.00067     0.00304     0.00252     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5895299.367 0.00073     0.00313     0.00205     
+Mul         5707241.270 0.00075     0.00315     0.00209     
+Add         6503427.076 0.00099     0.00338     0.00231     
+Triad       6540811.670 0.00098     0.00339     0.00234     
+Dot         6400454.363 0.00067     0.00308     0.00201     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5878178.170 0.00073     0.00312     0.00290     
+Mul         5700832.495 0.00075     0.00314     0.00294     
+Add         6507841.738 0.00099     0.00338     0.00318     
+Triad       6485220.976 0.00099     0.00356     0.00319     
+Dot         6353708.695 0.00068     0.00312     0.00286     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5876738.469 0.00073     0.00312     0.00254     
+Mul         5700756.827 0.00075     0.00315     0.00256     
+Add         6492043.666 0.00099     0.00338     0.00282     
+Triad       6514191.738 0.00099     0.00338     0.00282     
+Dot         6337648.421 0.00068     0.00308     0.00251     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5899502.070 0.00073     0.00310     0.00155     
+Mul         5716714.090 0.00075     0.00311     0.00159     
+Add         6522039.391 0.00099     0.00334     0.00181     
+Triad       6520336.362 0.00099     0.00336     0.00182     
+Dot         6382108.112 0.00067     0.00303     0.00152     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5898149.101 0.00073     0.00313     0.00182     
+Mul         5710397.917 0.00075     0.00315     0.00187     
+Add         6505259.222 0.00099     0.00339     0.00212     
+Triad       6549023.199 0.00098     0.00338     0.00211     
+Dot         6405293.834 0.00067     0.00307     0.00182     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5897930.416 0.00073     0.00310     0.00216     
+Mul         5712760.097 0.00075     0.00312     0.00223     
+Add         6507052.966 0.00099     0.00336     0.00245     
+Triad       6545184.154 0.00098     0.00335     0.00244     
+Dot         6398900.030 0.00067     0.00304     0.00214     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5854293.494 0.00073     0.00314     0.00298     
+Mul         5675963.198 0.00076     0.00315     0.00300     
+Add         6452019.289 0.00100     0.00339     0.00324     
+Triad       6464494.872 0.00100     0.00340     0.00324     
+Dot         6270620.272 0.00068     0.00309     0.00293     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5890609.784 0.00073     0.00308     0.00204     
+Mul         5708265.280 0.00075     0.00310     0.00203     
+Add         6498736.501 0.00099     0.00334     0.00228     
+Triad       6541230.059 0.00098     0.00334     0.00228     
+Dot         6379226.431 0.00067     0.00303     0.00196     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5892929.386 0.00073     0.00312     0.00183     
+Mul         5713276.847 0.00075     0.00314     0.00181     
+Add         6521167.962 0.00099     0.00339     0.00209     
+Triad       6544559.156 0.00098     0.00338     0.00207     
+Dot         6382885.853 0.00067     0.00307     0.00176     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5887678.545 0.00073     0.00311     0.00182     
+Mul         5700877.897 0.00075     0.00312     0.00185     
+Add         6495617.574 0.00099     0.00337     0.00211     
+Triad       6533780.123 0.00099     0.00337     0.00212     
+Dot         6373773.534 0.00067     0.00306     0.00178     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5881244.911 0.00073     0.00313     0.00236     
+Mul         5698941.403 0.00075     0.00315     0.00240     
+Add         6495290.129 0.00099     0.00340     0.00264     
+Triad       6517005.487 0.00099     0.00339     0.00263     
+Dot         6372591.411 0.00067     0.00308     0.00233     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5890205.858 0.00073     0.00310     0.00194     
+Mul         5701929.904 0.00075     0.00312     0.00197     
+Add         6496187.406 0.00099     0.00336     0.00221     
+Triad       6537300.639 0.00099     0.00336     0.00227     
+Dot         6367905.063 0.00067     0.00305     0.00193     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5900458.434 0.00073     0.00312     0.00186     
+Mul         5708265.280 0.00075     0.00315     0.00187     
+Add         6503400.816 0.00099     0.00339     0.00213     
+Triad       6545869.130 0.00098     0.00338     0.00215     
+Dot         6409145.818 0.00067     0.00308     0.00183     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5882912.435 0.00073     0.00313     0.00265     
+Mul         5704110.837 0.00075     0.00315     0.00263     
+Add         6518508.906 0.00099     0.00338     0.00288     
+Triad       6518964.025 0.00099     0.00338     0.00289     
+Dot         6402123.965 0.00067     0.00308     0.00256     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5887476.777 0.00073     0.00310     0.00212     
+Mul         5705126.146 0.00075     0.00312     0.00214     
+Add         6496514.941 0.00099     0.00335     0.00241     
+Triad       6537466.482 0.00099     0.00336     0.00237     
+Dot         6382838.425 0.00067     0.00305     0.00205     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5876207.807 0.00073     0.00313     0.00295     
+Mul         5699024.585 0.00075     0.00315     0.00299     
+Add         6468051.492 0.00100     0.00340     0.00323     
+Triad       6493987.227 0.00099     0.00340     0.00323     
+Dot         6298852.846 0.00068     0.00308     0.00292     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5884121.377 0.00073     0.00310     0.00171     
+Mul         5701975.323 0.00075     0.00312     0.00173     
+Add         6497786.090 0.00099     0.00335     0.00199     
+Triad       6508361.117 0.00099     0.00335     0.00199     
+Dot         6391158.700 0.00067     0.00304     0.00168     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5896116.765 0.00073     0.00310     0.00196     
+Mul         5709684.331 0.00075     0.00312     0.00196     
+Add         6519927.239 0.00099     0.00335     0.00221     
+Triad       6547279.435 0.00098     0.00335     0.00222     
+Dot         6384100.268 0.00067     0.00304     0.00192     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5884274.545 0.00073     0.00310     0.00166     
+Mul         5696243.098 0.00075     0.00312     0.00165     
+Add         6510775.017 0.00099     0.00336     0.00189     
+Triad       6534151.222 0.00099     0.00336     0.00190     
+Dot         6370077.311 0.00067     0.00306     0.00160     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        1373956.024 0.00313     0.00313     0.00313     
+Mul         1365150.632 0.00315     0.00377     0.00316     
+Add         2317711.024 0.00278     0.00340     0.00339     
+Triad       1902045.026 0.00339     0.00341     0.00339     
+Dot         1395832.651 0.00308     0.00309     0.00308     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5860356.394 0.00073     0.00310     0.00293     
+Mul         5691593.202 0.00075     0.00312     0.00297     
+Add         6448499.637 0.00100     0.00336     0.00321     
+Triad       6477005.770 0.00099     0.00336     0.00321     
+Dot         6270162.552 0.00068     0.00305     0.00288     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5880584.607 0.00073     0.00310     0.00269     
+Mul         5696333.756 0.00075     0.00312     0.00270     
+Add         6516135.403 0.00099     0.00336     0.00294     
+Triad       6515667.500 0.00099     0.00336     0.00295     
+Dot         6395612.675 0.00067     0.00304     0.00264     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5820827.331 0.00074     0.00314     0.00304     
+Mul         5637142.814 0.00076     0.00315     0.00305     
+Add         6414151.707 0.00100     0.00340     0.00330     
+Triad       6421638.414 0.00100     0.00340     0.00330     
+Dot         6220596.481 0.00069     0.00309     0.00301     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5872279.071 0.00073     0.00311     0.00288     
+Mul         5690243.438 0.00075     0.00313     0.00290     
+Add         6484052.626 0.00099     0.00337     0.00314     
+Triad       6504687.797 0.00099     0.00336     0.00313     
+Dot         6331202.224 0.00068     0.00306     0.00281     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5874640.503 0.00073     0.00311     0.00293     
+Mul         5694951.538 0.00075     0.00313     0.00295     
+Add         6473036.039 0.00100     0.00336     0.00318     
+Triad       6519274.070 0.00099     0.00336     0.00316     
+Dot         6357508.276 0.00068     0.00305     0.00285     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5881164.378 0.00073     0.00309     0.00174     
+Mul         5693713.398 0.00075     0.00311     0.00177     
+Add         6491245.637 0.00099     0.00335     0.00203     
+Triad       6533693.980 0.00099     0.00335     0.00203     
+Dot         6388506.396 0.00067     0.00304     0.00171     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5876473.126 0.00073     0.00310     0.00292     
+Mul         5697180.035 0.00075     0.00312     0.00295     
+Add         6465545.874 0.00100     0.00337     0.00319     
+Triad       6484914.162 0.00099     0.00337     0.00319     
+Dot         6304566.913 0.00068     0.00305     0.00290     
+BabelStream
+Version: 5.0
+Implementation: CUDA
+Running  Classic kernels 100 times in  Classic order 
+Number of elements: 268435456
+Precision: double
+Array size: 2147.5 MB
+Total size: 6442.5 MB
+CUDA Driver: 13030
+CUDA Device 0: "NVIDIA B300 SXM6 AC" 148 SMs(10,3) Memory: 3996 MHz x 7680-bit = 7672.320000 GB/s PEAK, ECC is ON
+Memory Allocation: DEFAULT
+Parallel for kernel config: thread blocks of size 256
+Reduction kernel config: 592 groups of (fixed) size 1024
+Function    MB/s        Min (sec)   Max         Average     
+Copy        5878870.120 0.00073     0.00314     0.00257     
+Mul         5693977.590 0.00075     0.00316     0.00260     
+Add         6515087.656 0.00099     0.00339     0.00284     
+Triad       6521299.982 0.00099     0.00340     0.00286     
+Dot         6395641.246 0.00067     0.00308     0.00254     

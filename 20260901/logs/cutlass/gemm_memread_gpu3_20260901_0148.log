@@ -1,0 +1,2550 @@
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9551  ms
+          Memory: 62.5878 GiB/s
+
+            Math: 275281 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3224  ms
+          Memory: 122.531 GiB/s
+
+            Math: 538930 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9551,62.5878,275281
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3224,122.531,538930
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9626  ms
+          Memory: 62.5732 GiB/s
+
+            Math: 275217 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3173  ms
+          Memory: 122.569 GiB/s
+
+            Math: 539099 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9626,62.5732,275217
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3173,122.569,539099
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9496  ms
+          Memory: 62.5987 GiB/s
+
+            Math: 275329 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.319  ms
+          Memory: 122.556 GiB/s
+
+            Math: 539042 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9496,62.5987,275329
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.319,122.556,539042
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9482  ms
+          Memory: 62.6013 GiB/s
+
+            Math: 275340 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3191  ms
+          Memory: 122.556 GiB/s
+
+            Math: 539039 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9482,62.6013,275340
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3191,122.556,539039
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.948  ms
+          Memory: 62.6017 GiB/s
+
+            Math: 275342 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3208  ms
+          Memory: 122.543 GiB/s
+
+            Math: 538983 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.948,62.6017,275342
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3208,122.543,538983
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9474  ms
+          Memory: 62.6028 GiB/s
+
+            Math: 275347 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3194  ms
+          Memory: 122.554 GiB/s
+
+            Math: 539030 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9474,62.6028,275347
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3194,122.554,539030
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9486  ms
+          Memory: 62.6005 GiB/s
+
+            Math: 275337 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3193  ms
+          Memory: 122.554 GiB/s
+
+            Math: 539033 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9486,62.6005,275337
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3193,122.554,539033
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9475  ms
+          Memory: 62.6028 GiB/s
+
+            Math: 275347 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3182  ms
+          Memory: 122.562 GiB/s
+
+            Math: 539068 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9475,62.6028,275347
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3182,122.562,539068
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9475  ms
+          Memory: 62.6027 GiB/s
+
+            Math: 275346 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3181  ms
+          Memory: 122.563 GiB/s
+
+            Math: 539073 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9475,62.6027,275346
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3181,122.563,539073
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9489  ms
+          Memory: 62.6 GiB/s
+
+            Math: 275335 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3203  ms
+          Memory: 122.546 GiB/s
+
+            Math: 538998 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9489,62.6,275335
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3203,122.546,538998
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9487  ms
+          Memory: 62.6003 GiB/s
+
+            Math: 275336 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3191  ms
+          Memory: 122.556 GiB/s
+
+            Math: 539040 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9487,62.6003,275336
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3191,122.556,539040
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.947  ms
+          Memory: 62.6037 GiB/s
+
+            Math: 275351 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.32  ms
+          Memory: 122.549 GiB/s
+
+            Math: 539010 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.947,62.6037,275351
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.32,122.549,539010
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9718  ms
+          Memory: 62.5552 GiB/s
+
+            Math: 275138 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3194  ms
+          Memory: 122.554 GiB/s
+
+            Math: 539029 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9718,62.5552,275138
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3194,122.554,539029
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.951  ms
+          Memory: 62.5959 GiB/s
+
+            Math: 275317 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3205  ms
+          Memory: 122.545 GiB/s
+
+            Math: 538993 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.951,62.5959,275317
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3205,122.545,538993
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9428  ms
+          Memory: 62.6119 GiB/s
+
+            Math: 275387 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3199  ms
+          Memory: 122.55 GiB/s
+
+            Math: 539014 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9428,62.6119,275387
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3199,122.55,539014
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9716  ms
+          Memory: 62.5556 GiB/s
+
+            Math: 275139 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3206  ms
+          Memory: 122.545 GiB/s
+
+            Math: 538990 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9716,62.5556,275139
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3206,122.545,538990
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9488  ms
+          Memory: 62.6001 GiB/s
+
+            Math: 275335 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3199  ms
+          Memory: 122.55 GiB/s
+
+            Math: 539012 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9488,62.6001,275335
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3199,122.55,539012
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9491  ms
+          Memory: 62.5995 GiB/s
+
+            Math: 275332 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3196  ms
+          Memory: 122.552 GiB/s
+
+            Math: 539023 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9491,62.5995,275332
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3196,122.552,539023
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9479  ms
+          Memory: 62.602 GiB/s
+
+            Math: 275343 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3197  ms
+          Memory: 122.551 GiB/s
+
+            Math: 539020 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9479,62.602,275343
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3197,122.551,539020
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9479  ms
+          Memory: 62.6019 GiB/s
+
+            Math: 275343 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.318  ms
+          Memory: 122.564 GiB/s
+
+            Math: 539076 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9479,62.6019,275343
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.318,122.564,539076
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9474  ms
+          Memory: 62.6029 GiB/s
+
+            Math: 275347 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3192  ms
+          Memory: 122.555 GiB/s
+
+            Math: 539037 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9474,62.6029,275347
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3192,122.555,539037
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9488  ms
+          Memory: 62.6001 GiB/s
+
+            Math: 275335 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3202  ms
+          Memory: 122.548 GiB/s
+
+            Math: 539003 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9488,62.6001,275335
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3202,122.548,539003
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9577  ms
+          Memory: 62.5827 GiB/s
+
+            Math: 275258 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3186  ms
+          Memory: 122.559 GiB/s
+
+            Math: 539055 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9577,62.5827,275258
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3186,122.559,539055
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9474  ms
+          Memory: 62.603 GiB/s
+
+            Math: 275348 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3186  ms
+          Memory: 122.559 GiB/s
+
+            Math: 539054 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9474,62.603,275348
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3186,122.559,539054
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9487  ms
+          Memory: 62.6003 GiB/s
+
+            Math: 275336 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3198  ms
+          Memory: 122.551 GiB/s
+
+            Math: 539017 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9487,62.6003,275336
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3198,122.551,539017
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9487  ms
+          Memory: 62.6004 GiB/s
+
+            Math: 275336 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3195  ms
+          Memory: 122.553 GiB/s
+
+            Math: 539025 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9487,62.6004,275336
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3195,122.553,539025
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9492  ms
+          Memory: 62.5995 GiB/s
+
+            Math: 275332 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3189  ms
+          Memory: 122.558 GiB/s
+
+            Math: 539047 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9492,62.5995,275332
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3189,122.558,539047
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9473  ms
+          Memory: 62.603 GiB/s
+
+            Math: 275348 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3194  ms
+          Memory: 122.553 GiB/s
+
+            Math: 539029 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9473,62.603,275348
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3194,122.553,539029
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9501  ms
+          Memory: 62.5975 GiB/s
+
+            Math: 275324 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.321  ms
+          Memory: 122.541 GiB/s
+
+            Math: 538975 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9501,62.5975,275324
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.321,122.541,538975
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.949  ms
+          Memory: 62.5998 GiB/s
+
+            Math: 275333 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3219  ms
+          Memory: 122.535 GiB/s
+
+            Math: 538946 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.949,62.5998,275333
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3219,122.535,538946
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.949  ms
+          Memory: 62.5998 GiB/s
+
+            Math: 275334 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3204  ms
+          Memory: 122.546 GiB/s
+
+            Math: 538997 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.949,62.5998,275334
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3204,122.546,538997
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9487  ms
+          Memory: 62.6003 GiB/s
+
+            Math: 275336 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3205  ms
+          Memory: 122.546 GiB/s
+
+            Math: 538994 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9487,62.6003,275336
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3205,122.546,538994
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9498  ms
+          Memory: 62.5982 GiB/s
+
+            Math: 275327 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3205  ms
+          Memory: 122.546 GiB/s
+
+            Math: 538994 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9498,62.5982,275327
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3205,122.546,538994
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=2 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=8 --min_cc=75 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 31.9475  ms
+          Memory: 62.6027 GiB/s
+
+            Math: 275346 GFLOP/s
+
+
+
+=============================
+  Problem ID: 1
+
+        Provider: [1;37mCUTLASS[0m
+   OperationKind: [1;37mgemm[0m
+       Operation: cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8
+
+          Status: [1;37mSuccess[0m
+    Verification: [1;37mON[0m
+     Disposition: [1;32mPassed[0m
+
+reference_device: Passed
+          cuBLAS: Not run
+           cuDNN: Not run
+
+       Arguments: --gemm_kind=universal --m=16384 --n=16384 --k=16384 --A=f16:column --B=f16:row --C=f32:column --D=f32:column  \
+                  --alpha=1 --beta=0 --split_k_mode=serial --split_k_slices=1 --batch_count=1 --raster_order=heuristic  \
+                  --runtime_input_datatype_a=invalid --runtime_input_datatype_b=invalid --use_pdl=false --enable_sm90_mixed_dtype_shuffle_test=false  \
+                  --swizzle_size=1 --op_class=tensorop --accum=f32 --cta_m=256 --cta_n=128 --cta_k=32 --cluster_m=1 --cluster_n=1  \
+                  --cluster_k=1 --cluster_m_fallback=1 --cluster_n_fallback=1 --cluster_k_fallback=1 --stages=3 --warps_m=4  \
+                  --warps_n=2 --warps_k=1 --inst_m=16 --inst_n=8 --inst_k=16 --min_cc=80 --max_cc=1024
+
+           Bytes: 2147483648  bytes
+           FLOPs: 8796629893120  flops
+           FLOPs/Byte: 4096
+
+         Runtime: 16.3182  ms
+          Memory: 122.563 GiB/s
+
+            Math: 539070 GFLOP/s
+
+
+=============================
+
+CSV Results:
+
+Problem,Provider,OperationKind,Operation,Disposition,Status,gemm_kind,m,n,k,A,B,C,D,alpha,beta,split_k_mode,split_k_slices,batch_count,raster_order,runtime_input_datatype_a,runtime_input_datatype_b,use_pdl,enable_sm90_mixed_dtype_shuffle_test,swizzle_size,op_class,accum,cta_m,cta_n,cta_k,cluster_m,cluster_n,cluster_k,cluster_m_fallback,cluster_n_fallback,cluster_k_fallback,stages,warps_m,warps_n,warps_k,inst_m,inst_n,inst_k,min_cc,max_cc,Bytes,Flops,Flops/Byte,Runtime,GB/s,GFLOPs
+1,CUTLASS,gemm,cutlass_tensorop_s1688gemm_f16_256x128_32x2_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,2,4,2,1,16,8,8,75,1024,2147483648,8796629893120,4096,31.9475,62.6027,275346
+1,CUTLASS,gemm,cutlass_tensorop_s16816gemm_f16_256x128_32x3_nt_align8,passed,success,universal,16384,16384,16384,f16:column,f16:row,f32:column,f32:column,1,0,serial,1,1,heuristic,invalid,invalid,false,false,1,tensorop,f32,256,128,32,1,1,1,1,1,1,3,4,2,1,16,8,16,80,1024,2147483648,8796629893120,4096,16.3182,122.563,539070

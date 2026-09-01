@@ -1,0 +1,77 @@
+Successfully ran diagnostic for group.
++---------------------------+------------------------------------------------+
+| Diagnostic                | Result                                         |
++===========================+================================================+
+|-----  Metadata  ----------+------------------------------------------------|
+| DCGM Version              | 4.6.1                                          |
+| Driver Version Detected   | 610.57.04                                      |
+| GPU Device IDs Detected   | 3182, 3182, 3182, 3182, 3182, 3182, 3182       |
+|-----  Deployment  --------+------------------------------------------------|
+| software                  | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++-----  Hardware  ----------+------------------------------------------------+
+| memory                    | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| diagnostic                | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| nvbandwidth               | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++-----  Integration  -------+------------------------------------------------+
+| pcie                      | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++-----  Stress  ------------+------------------------------------------------+
+| memory_bandwidth          | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| targeted_stress           | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
+| targeted_power            | Pass                                           |
+|                           | GPU0: Pass                                     |
+|                           | GPU1: Pass                                     |
+|                           | GPU2: Pass                                     |
+|                           | GPU3: Pass                                     |
+|                           | GPU4: Pass                                     |
+|                           | GPU5: Pass                                     |
+|                           | GPU6: Pass                                     |
++---------------------------+------------------------------------------------+

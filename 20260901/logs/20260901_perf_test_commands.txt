@@ -1,0 +1,66 @@
+##############################################################################
+    2>&1 | tee ${TEST_HOME}/babelstream/memread_gpu${gpu_id}_$(date +%Y%m%d_%H%M).log &
+done
+wait
+
+
+#=============================================================================
+# 8. Large Matrix Test — GPU 개별 대형 행렬 GEMM (편차 3% 이내 확인)
+#    목적: GPU 간 성능 편차 확인
+#=============================================================================
+
+for gpu_id in 0 1 2 3 4 5 6; do
+  echo "===== GPU ${gpu_id} Large Matrix GEMM =====" | tee -a ${TEST_HOME}/cutlass/large_matrix_$(date +%Y%m%d_%H%M).log
+  CUDA_VISIBLE_DEVICES=${gpu_id} ~/cutlass/build/tools/profiler/cutlass_profiler \
+    --operation=gemm \
+    --m=32768 --n=32768 --k=32768 \
+    --A=f16 --B=f16 --C=f32 \
+    --warmup-iterations=3 \
+    --profiling-iterations=10 \
+    2>&1 | tee -a ${TEST_HOME}/cutlass/large_matrix_$(date +%Y%m%d_%H%M).log
+done
+
+
+#=============================================================================
+# 9. GPU Burn Stress Test — 8시간 장시간 고부하 안정성 검증
+#    목적: 불량 GPU나 메모리 오류 사전 발견
+#=============================================================================
+
+cd ~/gpu_burn
+mkdir -p ${TEST_HOME}/gpu_burn
+
+# 8시간(28800초) 백그라운드 실행
+nohup bash -c 'CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ./gpu_burn 28800' \
+  > ${TEST_HOME}/gpu_burn/gpu_burn_8h_$(date +%Y%m%d_%H%M).log 2>&1 &
+echo "GPU Burn PID: $!"
+
+# GPU 모니터링 (별도 터미널 또는 백그라운드)
+nohup bash -c '
+while true; do
+  echo "$(date +%Y-%m-%d_%H:%M:%S)"
+  nvidia-smi --query-gpu=index,utilization.gpu,temperature.gpu,power.draw,clocks.sm,ecc.errors.uncorrected.volatile.total \
+    --format=csv,nounits
+  echo "---"
+  sleep 10
+done
+' > ${TEST_HOME}/gpu_burn/gpu_burn_monitor_$(date +%Y%m%d).csv 2>&1 &
+echo "Monitor PID: $!"
+
+
+#=============================================================================
+# 10. 결과 수집 — 전체 로그 아카이브
+#=============================================================================
+
+# 에러 키워드 일괄 검색
+echo "===== 에러 키워드 검색 =====" 
+grep -riE "error|fail|fault" ${TEST_HOME}/ || echo "에러 없음"
+
+# 전체 로그 tar 압축
+cd ~/
+tar czvf xe9780_perf_test_$(date +%Y%m%d).tar.gz ${TEST_HOME}/
+echo "아카이브 생성 완료: ~/xe9780_perf_test_$(date +%Y%m%d).tar.gz"
+
+# 로그 파일 목록 확인
+find ${TEST_HOME} -type f | sort
+
+

@@ -1,0 +1,1000 @@
+ 1142  ls
+ 1143  chmod +x mlperf-precheck.sh 
+ 1144  bash mlperf-precheck.sh 
+ 1145  ls
+ 1146  cd /tmp
+ 1147  ls
+ 1148  cd mlperf-precheck-dell-20260829-133241
+ 1149  ls
+ 1150  cat dmesg.txt 
+ 1151  sudo su - root
+ 1152  ls
+ 1153  cd ~
+ 1154  ls
+ 1155  chmod +x mlperf-precheck*
+ 1156  ls
+ 1157  bash mlperf-precheck-v2.sh 
+ 1158  mkdir -p /data/lsh/mlperf_inference_storage/{data,models,preprocessed_data}
+ 1159  sed -i '172s/ || echo 0//' mlperf-precheck-v2.sh
+ 1160  REPO_DIR=/data/lsh/inference_results_v6.0/closed/NVIDIA MLPERF_SCRATCH_PATH=/data/lsh/mlperf_inference_storage   bash mlperf-precheck-v2.sh --fix
+ 1161  bash mlperf-precheck-v2.sh 
+ 1162  ls
+ 1163  bash mlperf-stage2.sh 
+ 1164  salloc --nodes=1 --gres=gpu:7 --exclusive --time=04:00:00
+ 1165  bash ~/mlperf-stage3.sh 
+ 1166  salloc --nodes=1 --gres=gpu:7 --exclusive --time=04:00:00
+ 1167  cd /data/lsh/inference_results_v6.0/closed/NVIDIA && ./scaleout/run_scaleout.sh     --stage all --atomic-system B300-SXM-270GBx1     --gpus-per-node 7 --dp-multiplicity 7     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     --mlperf-scratch-path /data/lsh/mlperf_inference_storage     --extra-srun-flags "--overlap --cpu-bind=none"     --run-args "--benchmarks=llama2-70b --scenarios=Offline --core_type=trtllm_endpoint --test_run"
+ 1168  bash ~/mlperf-stage4.sh test
+ 1169  bash ~/mlperf-stage4.sh result
+ 1170  bash ~/mlperf-stage4.sh iffline
+ 1171  bash ~/mlperf-stage4.sh offline
+ 1172  squeue
+ 1173  bash ~/mlperf-stage4.sh result
+ 1174  squeue
+ 1175  cd /data/lsh/inference_results_v6.0/closed/NVIDIA/3rdparty/mlc-inference
+ 1176  python3 -c "
+ 1177  import sys; sys.path.insert(0,'tools/submission/submission_checker')
+ 1178  import constants as c
+ 1179  print('MODEL_CONFIG keys:', sorted(c.MODEL_CONFIG.keys()))
+ 1180  print('v6.0 has llama3.1-405b:', 'llama3.1-405b' in c.MODEL_CONFIG.get('v6.0',{}).get('performance-sample-count',{}))
+ 1181  "
+ 1182  git fetch --tags --depth 1 origin 2>/dev/null
+ 1183  git ls-remote --heads --tags origin | grep -iE 'v6\.0|r6\.0|6\.0' | head
+ 1184  git fetch --tags --depth 1 origin 2>/dev/null
+ 1185  git ls-remote --heads --tags origin | grep -iE 'v6\.0|r6\.0|6\.0' | head
+ 1186  git fetch --unshallow origin
+ 1187  git checkout  v6.0.0pre
+ 1188  python3 -c "
+ 1189  import sys; sys.path.insert(0,'tools/submission/submission_checker')
+ 1190  import constants as c
+ 1191  print(sorted(c.MODEL_CONFIG.keys()))
+ 1192  "
+ 1193  cd /data/lsh/inference_results_v6.0/closed/NVIDIA/3rdparty/mlc-inference
+ 1194  git checkout master
+ 1195  python3 -c "
+ 1196  import sys; sys.path.insert(0,'tools/submission/submission_checker')
+ 1197  import constants as c
+ 1198  print(sorted(c.MODEL_CONFIG.keys()))
+ 1199  "
+ 1200  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1201  cp code/common/mlcommons/loadgen.py /tmp/loadgen.py.bak
+ 1202  sed -i 's|^_latest_ver = max(versioning.parse(ver_key) for ver_key in submission_checker_constants.MODEL_CONFIG.keys())|_latest_ver = versioning.parse(C.VERSION.lstrip("v"))|' code/common/mlcommons/loadgen.py
+ 1203  sed -n '46,52p' code/common/mlcommons/loadgen.py
+ 1204  grep -n '_latest_ver\|_vstr' code/common/mlcommons/loadgen.py | head -4
+ 1205  bash ~/mlperf-stage4.sh test
+ 1206  tail -f /data/lsh/mlperf-runs/l2-test-33.log
+ 1207  bash /home/dell/mlperf-stage4.sh queue
+ 1208  tail -f /data/lsh/mlperf-runs/l2-test-33.log
+ 1209  env -u PMIX_SERVER_URI2 -u PMIX_SERVER_URI3 -u PMIX_SERVER_URI4     -u PMIX_NAMESPACE -u PMIX_RANK -u PMIX_SECURITY_MODE     -u PMIX_SERVER_TMPDIR -u PMIX_HOSTNAME -u PMIX_VERSION     -u SLURM_MPI_TYPE -u SLURM_PMIX_MAPPING_SERV     trtllm-serve ...
+ 1210  exit
+ 1211  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1212  ./scaleout/run_scaleout.sh     --stage all --atomic-system B300-SXM-270GBx1     --gpus-per-node 1 --dp-multiplicity 1     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     --mlperf-scratch-path /data/lsh/mlperf_inference_storage     --extra-srun-flags "--overlap --cpu-bind=none --mpi=none"     --run-args "--benchmarks=llama2-70b --scenarios=Offline --core_type=trtllm_endpoint --test_run"
+ 1213  ip addr
+ 1214  bash ~/mlperf-stage5.sh 
+ 1215  bash ~/mlperf-stage5.sh diag
+ 1216  bash ~/mlperf-stage5.sh clean
+ 1217  bash ~/mlperf-stage5.sh serve
+ 1218  bash ~/mlperf-stage5.sh clean
+ 1219  clear
+ 1220  bash ~/mlperf-stage5.sh clean
+ 1221  bash ~/mlperf-stage5.sh diag
+ 1222  bash ~/mlperf-stage5.sh serve
+ 1223  env -u SLURM_JOB_ID -u SLURM_JOBID   srun --nodes=1 --gres=gpu:1 --time=00:05:00 --mpi=none     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     bash -lc 'env | grep -E "^PMIX|^SLURM_MPI_TYPE" | sort'
+ 1224  env -u SLURM_JOB_ID -u SLURM_JOBID   srun --nodes=1 --gres=gpu:1 --time=00:05:00 --mpi=none     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     bash -lc 'env | grep -E "^PMIX|^SLURM_MPI_TYPE" | sort'
+ 1225  clean
+ 1226  clear
+ 1227  env -u SLURM_JOB_ID -u SLURM_JOBID   srun --nodes=1 --gres=gpu:1 --time=00:05:00 --mpi=none     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     bash -lc 'env | grep -E "^PMIX|^SLURM_MPI_TYPE" | sort'
+ 1228  bash
+ 1229  env -u PMIX_SERVER_URI2 -u PMIX_SERVER_URI3 -u PMIX_SERVER_URI4     -u PMIX_NAMESPACE -u PMIX_RANK -u PMIX_SECURITY_MODE     -u PMIX_SERVER_TMPDIR -u PMIX_HOSTNAME -u PMIX_VERSION     -u SLURM_MPI_TYPE -u SLURM_PMIX_MAPPING_SERV     trtllm-serve ...
+ 1230  env -u PMIX_SERVER_URI2 -u PMIX_SERVER_URI3 -u PMIX_SERVER_URI4     -u PMIX_NAMESPACE -u PMIX_RANK -u PMIX_SECURITY_MODE     -u PMIX_SERVER_TMPDIR -u PMIX_HOSTNAME -u PMIX_VERSION     -u SLURM_MPI_TYPE -u SLURM_PMIX_MAPPING_SERV     trtllm-serve ...
+ 1231  exit
+ 1232  salloc --nodes=1 --gres=gpu:7 --exclusive --time=02:00:00
+ 1233  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1234  D=build/logs/scaleout_B300-SXM-270GBx7_slurm-33_2026.08.29-15.32.45
+ 1235  ls -la "$D"/trtllm_serve_dp*_rank0.log
+ 1236  tail -60 "$D"/trtllm_serve_dp0_rank0.log
+ 1237  grep -iE 'error|traceback|OOM|CUDA|Killed|abort' "$D"/trtllm_serve_dp0_rank0.log | tail -20
+ 1238  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1239  D=build/logs/scaleout_B300-SXM-270GBx7_slurm-33_2026.08.29-15.32.45
+ 1240  ls -la "$D"/trtllm_serve_dp*_rank0.log
+ 1241  tail -60 "$D"/trtllm_serve_dp0_rank0.log
+ 1242  grep -iE 'error|traceback|OOM|CUDA|Killed|abort' "$D"/trtllm_serve_dp0_rank0.log | tail -2
+ 1243  salloc --nodes=1 --gres=gpu:7  --time=02:00:00
+ 1244  exit
+ 1245  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1246  D=$(ls -1dt build/logs/scaleout_* | head -1); echo "$D"
+ 1247  ls -la "$D"/slurm_logs/
+ 1248  echo "=== stdout 줄 수 ==="
+ 1249  wc -l "$D"/slurm_logs/run_llm_server_*.stdout 2>/dev/null
+ 1250  echo "=== gpus0 stdout ==="
+ 1251  tail -40 "$D"/slurm_logs/run_llm_server_dell_gpus0.stdout 2>/dev/null
+ 1252  echo "=== gpus0 stderr ==="
+ 1253  tail -40 "$D"/slurm_logs/run_llm_server_dell_gpus0.stderr 2>/dev/null
+ 1254  salloc --nodes=1 --gres=gpu:7 --exclusive --time=02:00:00
+ 1255  squeue
+ 1256  salloc --nodes=1 --gres=gpu:7 --exclusive --time=02:00:00
+ 1257  squeue -u dell
+ 1258  scancel 35
+ 1259  squeue -u dell
+ 1260  salloc --nodes=1 --gres=gpu:7 --exclusive --time=02:00:00 
+ 1261  squeue -u dell
+ 1262  salloc --nodes=1 --gres=gpu:7 --exclusive --time=02:00:00 
+ 1263  jqueue
+ 1264  squeue
+ 1265  squeue -u dell
+ 1266  scancel 37
+ 1267  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1268  ./scaleout/run_scaleout.sh     --stage server     --atomic-system B300-SXM-270GBx1     --gpus-per-node 7 --dp-multiplicity 7     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     --mlperf-scratch-path /data/lsh/mlperf_inference_storage     --extra-srun-flags "--overlap --cpu-bind=none"     --server-spawn-time 30     --run-args "--benchmarks=llama2-70b --scenarios=Offline --core_type=trtllm_endpoint"
+ 1269  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1270  ./scaleout/run_scaleout.sh     --stage server     --atomic-system B300-SXM-270GBx1     --gpus-per-node 7 --dp-multiplicity 7     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     --mlperf-scratch-path /data/lsh/mlperf_inference_storage     --extra-srun-flags "--overlap --cpu-bind=none"     --server-spawn-time 30     --run-args "--benchmarks=llama2-70b --scenarios=Offline --core_type=trtllm_endpoint"
+ 1271  salloc --nodes=1 --gres=gpu:7 --exclusive --time=02:00:00
+ 1272  env -u PMIX_SERVER_URI2 -u PMIX_SERVER_URI3 -u PMIX_SERVER_URI4     -u PMIX_NAMESPACE -u PMIX_RANK -u PMIX_SECURITY_MODE     -u PMIX_SERVER_TMPDIR -u PMIX_HOSTNAME -u PMIX_VERSION     -u SLURM_MPI_TYPE -u SLURM_PMIX_MAPPING_SERV     trtllm-serve ...
+ 1273  bash ~/mlperf-stage6
+ 1274  bash ~/mlperf-stage6.sh 
+ 1275  # Ctrl+C 후
+ 1276  scancel -u dell
+ 1277  squeue -u dell
+ 1278  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1279  D=$(ls -1dt build/logs/scaleout_* | head -1)
+ 1280  tail -25 "$D"/trtllm_serve_dp0_rank0.log
+ 1281  grep -n 'llmapi-launch\|mpi_mode\|LEADER\|world_size' scaleout/launch_server.py | head -20
+ 1282  grep -rn 'mpi_mode' code/fields/*.py code/llmlib/fields.py 2>/dev/null | head
+ 1283  d /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1284  # 1) 정리
+ 1285  scancel -u dell 2>/dev/null; sleep 3
+ 1286  pkill -9 -f 'trtllm-serve|trtllm-llmapi|code.main' 2>/dev/null; sleep 2
+ 1287  sudo scontrol update NodeName=dell State=RESUME 2>/dev/null
+ 1288  unset SLURM_JOB_ID SLURM_JOBID SLURM_NODELIST SLURM_NTASKS SLURM_JOB_NODELIST
+ 1289  # 2) run_scaleout.sh : leader -> legacy
+ 1290  cp -n scaleout/run_scaleout.sh /tmp/run_scaleout.sh.bak
+ 1291  sed -i 's/--mpi_mode=leader/--mpi_mode=legacy/g; s/--server_in_foreground//g' scaleout/run_scaleout.sh
+ 1292  echo "=== 패치 확인 (leader 가 없어야 정상) ==="
+ 1293  grep -n 'mpi_mode\|server_in_foreground' scaleout/run_scaleout.sh
+ 1294  # 3) 실행
+ 1295  bash ~/mlperf-stage6.sh
+ 1296  sudo -x
+ 1297  sudo su - root
+ 1298  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1299  # 1) 정리
+ 1300  scancel -u dell 2>/dev/null; sleep 3
+ 1301  pkill -9 -f 'trtllm-serve|trtllm-llmapi|code.main' 2>/dev/null; sleep 2
+ 1302  sudo scontrol update NodeName=dell State=RESUME 2>/dev/null
+ 1303  unset SLURM_JOB_ID SLURM_JOBID SLURM_NODELIST SLURM_NTASKS SLURM_JOB_NODELIST
+ 1304  # 2) run_scaleout.sh : leader -> legacy
+ 1305  cp -n scaleout/run_scaleout.sh /tmp/run_scaleout.sh.bak
+ 1306  sed -i 's/--mpi_mode=leader/--mpi_mode=legacy/g; s/--server_in_foreground//g' scaleout/run_scaleout.sh
+ 1307  echo "=== 패치 확인 (leader 가 없어야 정상) ==="
+ 1308  grep -n 'mpi_mode\|server_in_foreground' scaleout/run_scaleout.sh
+ 1309  # 3) 실행
+ 1310  bash ~/mlperf-stage6.sh
+ 1311  cat /data/lsh/mlperf-runs/verbose-0830-0311.log
+ 1312  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1313  # 1) 정리
+ 1314  scancel -u dell 2>/dev/null; sleep 3
+ 1315  pkill -9 -f 'trtllm-serve|trtllm-llmapi|code.main' 2>/dev/null; sleep 2
+ 1316  sudo scontrol update NodeName=dell State=RESUME 2>/dev/null
+ 1317  unset SLURM_JOB_ID SLURM_JOBID SLURM_NODELIST SLURM_NTASKS SLURM_JOB_NODELIST
+ 1318  # 2) run_scaleout.sh : leader -> legacy
+ 1319  cp -n scaleout/run_scaleout.sh /tmp/run_scaleout.sh.bak
+ 1320  sed -i 's/--mpi_mode=leader/--mpi_mode=legacy/g; s/--server_in_foreground//g' scaleout/run_scaleout.sh
+ 1321  echo "=== 패치 확인 (leader 가 없어야 정상) ==="
+ 1322  grep -n 'mpi_mode\|server_in_foreground' scaleout/run_scaleout.sh
+ 1323  # 3) 실행
+ 1324  bash ~/mlperf-stage6.sh
+ 1325  cat /data/lsh/mlperf-runs/verbose-0830-0315.log
+ 1326  bash ~/mlperf-reset.sh 
+ 1327  cd ~
+ 1328  bash ~/mlperf-reset.sh 
+ 1329  bash ~/mlperf-stage6.sh 
+ 1330  bash ~/mlperf-stage6.sh 7
+ 1331  bash ~/mlperf-stage6.sh 1 full
+ 1332  bash ~/mlperf-stage6.sh 4 ful
+ 1333  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1334  ./scaleout/run_scaleout.sh     --stage server     --atomic-system B300-SXM-270GBx1     --gpus-per-node 7 --dp-multiplicity 7     --container-image /data/lsh/inference_results_v6.0/closed/NVIDIA/build/sqsh_images/mlperf-inference-dell-x86_64-release.sqsh     --mlperf-scratch-path /data/lsh/mlperf_inference_storage     --extra-srun-flags "--overlap --cpu-bind=none"     --server-spawn-time 30     --run-args "--benchmarks=llama2-70b --scenarios=Offline --core_type=trtllm_endpoint"
+ 1335  sinfo -R
+ 1336  sudo scontrol update NodeName=dell State=RESUME
+ 1337  sinfo -R
+ 1338  sinfo 
+ 1339  nvidia-smi
+ 1340  squeue -u dell
+ 1341  sinfo
+ 1342  scancel -u dell
+ 1343  sinfo
+ 1344  squeue
+ 1345  squeue -u dell
+ 1346  sinfo
+ 1347  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1348  D=$(ls -1dt build/logs/scaleout_* | head -1); echo "$D"
+ 1349  grep -c 'OPAL ERROR' "$D"/trtllm_serve_dp0_rank0.log
+ 1350  tail -30 "$D"/trtllm_serve_dp0_rank0.log
+ 1351  ls
+ 1352  tail -30 "$D"/trtllm_serve_dp0_rank0.log
+ 1353  tmux ls
+ 1354  tmux new -s mlperf
+ 1355  FP4=/data/lsh/mlperf_inference_storage/models/Llama3.1-405B/fp4-quantized-modelopt/llama3.1-405b-instruct-hf-torch-fp4
+ 1356  du -sh "$FP4"
+ 1357  ls "$FP4"/hf_quant_config.json "$FP4"/config.json
+ 1358  ls "$FP4"/*.safetensors | wc -l
+ 1359  FP4=/data/lsh/mlperf_inference_storage/models/Llama3.1-405B/fp4-quantized-modelopt/llama3.1-405b-instruct-hf-torch-fp4
+ 1360  du -sh "$FP4"
+ 1361  ls "$FP4"/hf_quant_config.json "$FP4"/config.json
+ 1362  ls "$FP4"/*.safetensors | wc -l
+ 1363  for u in llama3.1-405b-dataset llama3_1-405b-dataset llama3-1-405b          llama3.1-405b llama3-1-405b-processed-dataset mlperf-llama3-1-405b-dataset; do   c=$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 \
+ 1364        "https://inference.mlcommons-storage.org/metadata/${u}.uri [inference.mlcommons-storage.org]");   echo "$c  $u"; done
+ 1365  sed -n '/[Gg]et [Dd]ataset/,/^## /p'   /data/lsh/inference_results_v6.0/closed/NVIDIA/3rdparty/mlc-inference/language/llama3.1-405b/README.md
+ 1366  ~mkdir -p /data/lsh/mlperf_inference_storage/data/llama3.1-405b
+ 1367  cd /data/lsh/mlperf_inference_storage/data/llama3.1-405b
+ 1368  mkdir -p /data/lsh/mlperf_inference_storage/data/llama3.1-405b
+ 1369  cd /data/lsh/mlperf_inference_storage/data/llama3.1-405b
+ 1370  R2=https://raw.githubusercontent.com/mlcommons/r2-downloader/refs/heads/main/mlc-r2-downloader.sh
+ 1371  bash <(curl -s $R2) https://inference.mlcommons-storage.org/metadata/llama3-1-405b-dataset-8313.uri
+ 1372  bash <(curl -s $R2) https://inference.mlcommons-storage.org/metadata/llama3-1-405b-calibration-dataset-512.uri 
+ 1373  nvidia-smi
+ 1374  ls
+ 1375  df -h
+ 1376  tmux ls
+ 1377  tmux attach -t mlperf
+ 1378  /data/lsh/mlperf-runs/verbose-0830-0841.log
+ 1379  cat /data/lsh/mlperf-runs/verbose-0830-0841.log
+ 1380  history
+ 1381  sed -i 's/--server-spawn-time 45/--server-spawn-time 120/' ~/mlperf-stage6.sh 
+ 1382  tmux attach -t mlperf
+ 1383  nvida-smi
+ 1384  nvidia-smi
+ 1385  tmux attach -t mlperf
+ 1386  nvidia-smi
+ 1387  tmux attach -t mlperf
+ 1388  grep 'Launching DP rank' /data/lsh/mlperf-runs/verbose-*.log | tail -8
+ 1389  tmux attach -t mlperf
+ 1390  start_gpu = index * gpus_per_server   
+ 1391  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1392  cp scaleout/run_scaleout.sh /tmp/rs.bak
+ 1393  cp code/llmlib/launch_server.py /tmp/ls.bak
+ 1394  ed -i 's|export NVIDIA_VISIBLE_DEVICES="${gpu_list}"|export NVIDIA_VISIBLE_DEVICES="${gpu_list}"; export MLPERF_GPU_LIST="${gpu_list}"|' scaleout/run_scaleout.sh
+ 1395  sed -i 's|--export=ALL,NVIDIA_VISIBLE_DEVICES,|--export=ALL,NVIDIA_VISIBLE_DEVICES,MLPERF_GPU_LIST,|' scaleout/run_scaleout.sh
+ 1396  bash -n scaleout/run_scaleout.sh && echo "run_scaleout 문법 OK"
+ 1397  sed -i 's|export NVIDIA_VISIBLE_DEVICES="${gpu_list}"|export NVIDIA_VISIBLE_DEVICES="${gpu_list}"; export MLPERF_GPU_LIST="${gpu_list}"|' scaleout/run_scaleout.sh
+ 1398  sed -i 's|--export=ALL,NVIDIA_VISIBLE_DEVICES,|--export=ALL,NVIDIA_VISIBLE_DEVICES,MLPERF_GPU_LIST,|' scaleout/run_scaleout.sh
+ 1399  bash -n scaleout/run_scaleout.sh && echo "run_scaleout 문법 OK"
+ 1400  python3 - <<'EOF'
+ 1401  import re
+ 1402  p='code/llmlib/launch_server.py'
+ 1403  s=open(p).read()
+ 1404  old="""                start_gpu = index * gpus_per_server
+ 1405                  gpu_ids = list(range(start_gpu, start_gpu + gpus_per_server))
+ 1406                  env['CUDA_VISIBLE_DEVICES'] = ','.join(map(str, gpu_ids))"""
+ 1407  new="""                import os as _os
+ 1408                  _ext = _os.environ.get('MLPERF_GPU_LIST')
+ 1409                  if _ext:
+ 1410                      env['CUDA_VISIBLE_DEVICES'] = _ext
+ 1411                  else:
+ 1412                      start_gpu = index * gpus_per_server
+ 1413                      gpu_ids = list(range(start_gpu, start_gpu + gpus_per_server))
+ 1414                      env['CUDA_VISIBLE_DEVICES'] = ','.join(map(str, gpu_ids))"""
+ 1415  assert old in s, "패턴 불일치 - 수동 확인 필요"
+ 1416  open(p,'w').write(s.replace(old,new))
+ 1417  print("launch_server.py 패치 완료")
+ 1418  EOF
+ 1419  python3 -m py_compile code/llmlib/launch_server.py && echo "launch_server 문법 OK"
+ 1420  grep -n 'MLPERF_GPU_LIST' scaleout/run_scaleout.sh code/llmlib/launch_server.py
+ 1421  tmux attach -t mlperf
+ 1422  nvidia-smi
+ 1423  tmux attach -t mlperf
+ 1424  nvidia-smi
+ 1425  grep 'Launching DP rank' /data/lsh/mlperf-runs/verbose-*.log | tail -8
+ 1426  nvidia-smi
+ 1427  tmux attach -t mlperf
+ 1428  ip addr
+ 1429  tmux attach -t mlperf
+ 1430  grep -iE "error" ~/gpu_burn_test/compute_20260831_0015.log 
+ 1431  grep -oE "[0-9.]+ Gflop/s" ~/gpu_burn_test/compute_20260831_0015.log | tail -20
+ 1432  cat ~/gpu_burn_test/compute_20260831_0015.log | tail -20
+ 1433  cd gpu_burn_test/
+ 1434  ls
+ 1435  cat memory_20260831_0031.csv 
+ 1436  cd ..
+ 1437  ls
+ 1438  ls -al 
+ 1439  git clone https://github.com/NVIDIA/cuda-samples.git
+ 1440  cd cuda-samples/
+ 1441  ls
+ 1442  ls -al 
+ 1443  cd ..
+ 1444  rm -r cuda-samples/
+ 1445  ls -al 
+ 1446  cmake --version
+ 1447  sudo apt install -y libboost-program-options-dev
+ 1448  git clone https://github.com/NVIDIA/nvbandwidth.git
+ 1449  ls
+ 1450  cd nvbandwidth/
+ 1451  cmake -B build
+ 1452  which nvcc
+ 1453  nvcc --version
+ 1454  export PATH=/usr/local/cuda/bin:$PATH
+ 1455  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+ 1456  echo 'export ' >> ~/.bashrc
+ 1457  echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+ 1458  source ~/.bashrc
+ 1459  which nvcc
+ 1460  nvcc --version
+ 1461  ls /usr/local/cuda*
+ 1462  gcc --version
+ 1463  g++ --version
+ 1464  cmake -B build -DCMAKE_CUDA_COMPILER=$(which nvcc)
+ 1465  cmake -B build   -DCMAKE_CUDA_COMPILER=$(which nvcc)   -DCMAKE_CUDA_ARCHITECTURES=8
+ 1466  nvidia-smi --query-gpu=compute_cap --format=csv,noheader
+ 1467  ls
+ 1468  ls -al 
+ 1469  rm -rf build
+ 1470  cmake -B build   -DCMAKE_CUDA_COMPILER=$(which nvcc)   -DCMAKE_CUDA_ARCHITECTURES=86
+ 1471  cmake --build build -j$(nproc)
+ 1472  ls
+ 1473  cd build/
+ 1474  ls
+ 1475  ./nvbandwidth --version
+ 1476  ./nvbandwidth --list
+ 1477  CUDA_VISIBLE_DEVICE=0,1,2,3,4,5,6 ./nvbandwidth 2>&1 | tee ~/gpu_burn_test/nvbandwidth_full_$(date +%Y%m%d_%H%M).log
+ 1478  watch  -n 5 nvidia-smi --query-gpu=index,utilization.gpu,temperature.gpu,power.draw --format=csv
+ 1479  ls
+ 1480  cd gpu_burn
+ 1481  DUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ./gpu_burn -d 600 2>&1 | tee ~/gpu_burn_test/compute_$(date +%Y%m%d_%H%M).log
+ 1482  Last login: Sun Aug 30 13:15:00 2026 from 10.16.123.111
+ 1483  dell@dell:~$
+ 1484  dell@dell:~$ ls
+ 1485  build                       gpu_burn       MLC             mlperf-precheck.sh     mlperf-reset.sh   mlperf-stage3.sh  mlperf-stage5.sh
+ 1486  cuda-keyring_1.1-1_all.deb  gpu_burn_test  mlperf-405b.sh  mlperf-precheck-v2.sh  mlperf-stage2.sh  mlperf-stage4.sh  mlperf-stage6.sh
+ 1487  dell@dell:~$ cd gpu_burn
+ 1488  dell@dell:~/gpu_burn$ DUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ./gpu_burn -d 600 2>&1 | tee ~/gpu_burn_test/compute_$(date +%Y%m%d_%H%M).log
+ 1489  GPU 0: NVIDIA B300 SXM6 AC (UUID: GPU-bce5282f-d716-d136-5759-b7181a7a55df)
+ 1490  GPU 1: NVIDIA B300 SXM6 AC (UUID: GPU-d6fcaafa-e017-734b-43a5-9f5953cf7150)
+ 1491  GPU 2: NVIDIA B300 SXM6 AC (UUID: GPU-63702342-9bed-efb1-1262-10971a1218cd)
+ 1492  GPU 3: NVIDIA B300 SXM6 AC (UUID: GPU-50db20c5-bd33-c81d-2eea-d6f6b623c0f4)
+ 1493  GPU 4: NVIDIA B300 SXM6 AC (UUID: GPU-fa889c02-065e-66b6-15a8-e052e6fe3743)
+ 1494  GPU 5: NVIDIA B300 SXM6 AC (UUID: GPU-1ba19bc3-3adc-acaf-5b88-5c623b05a799)
+ 1495  GPU 6: NVIDIA B300 SXM6 AC (UUID: GPU-07634869-498e-829a-ecb5-9f1611c125fb)
+ 1496  cuInit returned 0 (no error)
+ 1497  nvidia-smi --query-gpu=index,ecc.errors.corrected.volatile.total,ecc.errors.uncorrected.volatile.total,retired_pages.pending --format=csv -l 5 -f ~/gpu_burn_test/memory_$(date +%Y%m%d_%H%M).csv
+ 1498  mkdir -p ~/gpu_burn_test/large_matrix
+ 1499  cd ..
+ 1500  cd gpu_burn_test/large_matrix/
+ 1501  for i in 0 1 2 3 4 5 6; do    CUDA_VISIBLE_DEVICES=$i ~/gpu_burn/gpu_burn -d 300 > gpu_${i}.log 2>&1  &  done
+ 1502  ls
+ 1503  cat /data/lsh/405b-0830-1403.log
+ 1504  FP4=/data/lsh/mlperf_inference_storage/models/Llama3.1-405B/fp4-quantized-modelopt/llama3.1-405b-instruct-hf-torch-fp4
+ 1505  du -sh "$FP4"
+ 1506  ls "$FP4"/*.safetensors 2>/dev/null | wc -l
+ 1507  cat "$FP4"/model.safetensors.index.json 2>/dev/null | python3 -c "import json,sys; d=json.load(sys.stdin); print('필요 파일 수:', len(set(d['weight_map'].values())))" 2>/dev/null
+ 1508  hf download nvidia/Llama-3.1-405B-Instruct-FP4 --local-dir "$FP4"
+ 1509  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1510  D=$(ls -1dt build/logs/scaleout_* | head -1); echo "$D"
+ 1511  tail -40 "$D"/trtllm_serve_dp0_rank0.log
+ 1512  grep -inE 'error|not found|missing|invalid|abort' "$D"/trtllm_serve_dp0_rank0.log | tail -15
+ 1513  clear
+ 1514  FP4=/data/lsh/mlperf_inference_storage/models/Llama3.1-405B/fp4-quantized-modelopt/llama3.1-405b-instruct-hf-torch-fp4
+ 1515  du -sh "$FP4"
+ 1516  ls "$FP4"/*.safetensors 2>/dev/null | wc -l
+ 1517  cat "$FP4"/model.safetensors.index.json 2>/dev/null | python3 -c "import json,sys; d=json.load(sys.stdin); print('필요 파일 수:', len(set(d['weight_map'].values())))" 2>/dev/null
+ 1518  hf download nvidia/Llama-3.1-405B-Instruct-FP4 --local-dir "$FP4"
+ 1519  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1520  D=$(ls -1dt build/logs/scaleout_* | head -1); echo "$D"
+ 1521  tail -40 "$D"/trtllm_serve_dp0_rank0.log
+ 1522  grep -inE 'error|not found|missing|invalid|abort' "$D"/trtllm_serve_dp0_rank0.log | tail -15
+ 1523  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1524  D=build/logs/scaleout_B300-SXM-270GBx4_slurm-76_2026.08.30-14.03.59
+ 1525  ls -la "$D"/
+ 1526  ls -la "$D"/slurm_logs/ 2>/dev/null
+ 1527  echo "=== 서버 stderr ==="
+ 1528  cat "$D"/slurm_logs/run_llm_server_*.stderr 2>/dev/null | tail -40
+ 1529  echo "=== 서버 stdout ==="
+ 1530  cat "$D"/slurm_logs/run_llm_server_*.stdout 2>/dev/null | tail -20
+ 1531  cd /data/lsh/inference_results_v6.0/closed/NVIDIA
+ 1532  cp code/llmlib/launch_server.py /tmp/ls545.bak
+ 1533  sed -n '535,550p' code/llmlib/launch_server.py
+ 1534  python3 - <<'EOF'
+ 1535  p='code/llmlib/launch_server.py'
+ 1536  s=open(p).read()
+ 1537  old='            logging.info(f"  GPU devices: {gpu_ids}")'
+ 1538  new='            logging.info(f"  GPU devices: {locals().get(\'gpu_ids\', env.get(\'CUDA_VISIBLE_DEVICES\', \'default\'))}")'
+ 1539  if old in s:
+ 1540      open(p,'w').write(s.replace(old,new)); print("패치 완료")
+ 1541  else:
+ 1542      print("들여쓰기가 다름 - 아래 후보 확인 필요")
+ 1543      for i,l in enumerate(s.split('\n'),1):
+ 1544          if 'GPU devices' in l: print(i, repr(l))
+ 1545  EOF
+ 1546  python3 -m py_compile code/llmlib/launch_server.py && echo "문법 OK"
+ 1547  grep -n 'GPU devices' code/llmlib/launch_server.py
+ 1548  tmux attach -t mlperf
+ 1549  cat /data/lsh/405b-0831-0132.log
+ 1550  tmux attach -t gpuburn72h
+ 1551  tmux list
+ 1552  mmux ls
+ 1553  tmux ls
+ 1554  tmux attach -t gpuburn72h
+ 1555  CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ~/gpu-burn/gpu_burn -d 259200 2>&1 | tee -a ~/gpu_burn_test/burn72h_$(date +%Y%m%d_%H%M).log
+ 1556  CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ~/gpu_burn/gpu_burn -d 259200 2>&1 | tee -a ~/gpu_burn_test/burn72h_$(date +%Y%m%d_%H%M).log
+ 1557  tmux ls
+ 1558  tmux attach -t gpuburn72h
+ 1559  CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ~/gpu_burn/gpu_burn -d 259200 2>&1 | tee -a ~/gpu_burn_test/burn72h_fp64_$(date +%Y%m%d_%H%M).log
+ 1560  sudo su -
+ 1561  sudo apt install -y tmux
+ 1562  tmux new -s gpuburn72h
+ 1563  clear
+ 1564  sudo su -
+ 1565  htop
+ 1566  ls
+ 1567  ls -al
+ 1568  htop
+ 1569  sudo su -
+ 1570  cd ~/gpu-burn
+ 1571  CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ./gpu_burn 259200 2>&1 | tee -a ~/gpu_burn_test/burn72h_fp32_$(date +%Y%m%d_%H%M).log
+ 1572  exit
+ 1573  tmux attach -t gpuburn72h
+ 1574  tmux attach -t mlperf
+ 1575  grep -o 'Processing: *[0-9]*%[^]]*]' /data/lsh/405b-*.log | tail -3
+ 1576  grep -o 'Processing: *[0-9]*%[^]]*]' /data/lsh/405b-*.log | tail -f
+ 1577  tmux attach -t mlperf
+ 1578  grep -o 'Processing: *[0-9]*%[^]]*]' /data/lsh/405b-*.log | tail -f
+ 1579  tmux attach -t mlperf
+ 1580  grep -o 'Processing: *[0-9]*%[^]]*]' /data/lsh/405b-*.log | tail -f
+ 1581  tmux attach -t mlperf
+ 1582  ls
+ 1583  cd /data/lsh
+ 1584  ls
+ 1585  cat 405b-0831-0530.log
+ 1586  tail -f  405b-0831-0530.log
+ 1587  tmux ls
+ 1588  tmux attach -t gpuburn72h
+ 1589  tmux attach -t mlperf
+ 1590  ls
+ 1591  cat [200~405b-0831-0800.log~
+ 1592  cat 405b-0831-0800.log
+ 1593  tmux attach -t mlperf
+ 1594  bash ~/mlperf-405b.sh 
+ 1595  tmux attach -t mlperf
+ 1596  nvidiA-SMIU
+ 1597  nvidia-smi
+ 1598  tmux ls
+ 1599  tmux attach -t gpuburn72h
+ 1600  #
+ 1601  tmux attach -t gpuburn72h
+ 1602  nvidia-smi
+ 1603  nvidia-ctk --version
+ 1604  docker info | grep -i runtime
+ 1605  cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+ 1606  overlay
+ 1607  br_netfilter
+ 1608  EOF
+ 1609  sudo modprobe overlay
+ 1610  sudo modprobe br_netfilter
+ 1611  cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+ 1612  net.bridge.bridge-nf-call-iptables  = 1
+ 1613  net.bridge.bridge-nf-call-ip6tables = 1
+ 1614  net.ipv4.ip_forward                 = 1
+ 1615  EOF
+ 1616  sudo sysctl --system
+ 1617  sudo swapoff -a
+ 1618  sudo sed -i '/ swap / s/^/#/' /etc/fstab
+ 1619  sudo mkdir -p /etc/containerd
+ 1620  containerd config default | sudo tee /etc/containerd/config.toml
+ 1621  sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+ 1622  sudo systemctl restart containerd
+ 1623  sudo apt-get update
+ 1624  sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+ 1625  curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+ 1626  echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+ 1627  sudo apt-get update
+ 1628  sudo apt-get install -y kubelet kubeadm kubectl
+ 1629  sudo apt-mark hold kubelet kubeadm kubectl
+ 1630  ls
+ 1631  mkdir gpu-burn-build-test
+ 1632  cd gpu-burn-build-test/
+ 1633  ls
+ 1634  git clone https://github.com/wilicc/gpu-burn.git
+ 1635  ls
+ 1636  make
+ 1637  cd gpu-burn/
+ 1638  ls
+ 1639  make
+ 1640  ls
+ 1641  cd ..
+ 1642  ls
+ 1643  rm -rf gpu-burn-build-test/
+ 1644  sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+ 1645  mkdir -p $HOME/.kube
+ 1646  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+ 1647  sudo apt-get update
+ 1648  sudo apt-get install -y conntrack
+ 1649  sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+ 1650  ls $HOME/.kube/
+ 1651  ls -al $HOME/.kube/
+ 1652  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+ 1653  ls -al $HOME/.kube/
+ 1654  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+ 1655  kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml~
+ 1656  kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml
+ 1657  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+ 1658  kubectl get nodes -o wide
+ 1659  kubectl get node -A
+ 1660  helm version
+ 1661  curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 
+ 1662  curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+ 1663  helm versiob
+ 1664  helm version
+ 1665  helm repo add nvidia https://helm.ngc.nvidia.com/nvidia
+ 1666  helm repo update
+ 1667  kubectl create namespace gpu-operator
+ 1668  helm install gpu-operator nvidia/gpu-operator   -n gpu-operator   --set driver.enabled=false   --set toolkit.enabled=false   --set devicePlugin.enabled=true   --set dcgmExporter.enabled=true   --set nfd.enabled=true
+ 1669  kubectl get pods -n gpu-operator -w
+ 1670  kubectl get pods -n gpu-operator 
+ 1671  kubectl get pods -n gpu-operator
+ 1672  k get all -n gpu-operator
+ 1673  kubectl get all -n gpu-operator
+ 1674  kubectl get pods -n gpu-operator
+ 1675  kubectl logs -n gpu-operator gpu-feature-discovery-9j5c7
+ 1676  kubectl logs -n gpu-operator nvidia-dcgm-exporter-j4r26
+ 1677  kubectl logs -n gpu-operator nvidia-device-plugin-daemonset-p76kl
+ 1678  kubectl logs -n gpu-operator nvidia-operator-validator-vw9np
+ 1679  kubectl describe pod -n gpu-operator nvidia-operator-validator-vw9np
+ 1680  which nvidia-container-runtime
+ 1681  sudo nvidia-ctk runtime configure --runtime=containerd
+ 1682  sudo cat /etc/containerd/config.toml | grep -A 5 nvidia
+ 1683  sudo cat /etc/containerd/conf.d/99-nvidia.toml
+ 1684  sudo cat /etc/containerd/config.toml | grep -i import
+ 1685  sudo systemctl restart containerd
+ 1686  sudo crictl info | grep -i nvidia
+ 1687  kubectl delete pod -n gpu-operator nvidia-operator-validator-vw9np
+ 1688  kubectl get pods -n gpu-operator -w
+ 1689  kubectl get pods -n gpu-operator
+ 1690  sudo su -
+ 1691  history | grep ps
+ 1692  ps aux | grep -E 'cicc|ptxas' | grep -v grep
+ 1693  sudo su -
+ 1694  tmux attach -t mlperf
+ 1695  cat 405b-0831-0800.log
+ 1696  cd /data
+ 1697  cd mlperf/
+ 1698  ls
+ 1699  cd ..
+ 1700  ls
+ 1701  cd lsh
+ 1702  ls
+ 1703  cat 405b-0831-0800.log
+ 1704  ls
+ 1705  ls -al
+ 1706  tail -f 405b-0831-0800.log
+ 1707  tmux attach -t mlperf
+ 1708  sed -i "s|TTFT=\$(grep -i 'ttft' \"\$S\" | grep '99.00' | grep -oE '\[0-9\]{6,}' | tail -1)|TTFT=\$(grep -i 'percentile first token latency' \"\$S\" | grep '99.00' | grep -oE '[0-9]{6,}' | tail -1)|" ~/mlperf-405b.sh
+ 1709  tmux attach -t mlperf'
+ 1710  tmux attach -t mlperf
+ 1711  nvidia-smi
+ 1712  tmux list
+ 1713  tmux ld
+ 1714  tmux ls
+ 1715  tmux kill-session -t gpuburn72h
+ 1716  tmux ls
+ 1717  for i in 0 1 2 3 4 5 6; do     echo "===== GPU $i 테스트 시작 =====";     CUDA_VISIBLE_DEVICES=$i ~/gpu-burn/gpu_burn 60;     echo "===== GPU $i 테스트 종료 =====";     sleep 5; done
+ 1718  ls
+ 1719  cd gpu_burn
+ 1720  ls
+ 1721  cd ..
+ 1722  for i in 0 1 2 3 4 5 6; do     echo "===== GPU $i 테스트 시작 =====";     CUDA_VISIBLE_DEVICES=$i ~/gpu_burn/gpu_burn 60;     echo "===== GPU $i 테스트 종료 =====";     sleep 5; done
+ 1723  tmux new -s gpuburn72h
+ 1724  tmux ls
+ 1725  tmux kill-session -t gpuburn72h 
+ 1726  tmux ls
+ 1727  tmux new -s gpuburn72h
+ 1728  tmux ls
+ 1729  tmux kill-session -t gpuburn72h
+ 1730  tmux ls
+ 1731  tmux new -s gpuburn72h
+ 1732  tmux ls
+ 1733  tmux kill-session -t gpuburn72h
+ 1734  tmux ls
+ 1735  for i in 0 1 2 3 4 5 6; do     echo "===== GPU $i 테스트 시작 =====";     CUDA_VISIBLE_DEVICES=$i ~/gpu_burn/gpu_burn 60;     echo "===== GPU $i 테스트 종료 =====";     sleep 5; done
+ 1736  nvidia-smi 
+ 1737  dmesg | grep -i -E "xid|nvrm|gpu|error|fault" | tail -30
+ 1738  sudo dmesg | grep -i -E "xid|nvrm|gpu|error|fault" | tail -30
+ 1739  CUDA_VISIBLE_DEVICES=0 ~/gpu_burn/gpu_burn 30
+ 1740  CUDA_VISIBLE_DEVICES=0 ~/gpu_burn/gpu_burn -d 30
+ 1741  nvidia-smi --query-gpu=compute_cap --format=csv,noheader
+ 1742  nvcc --version
+ 1743  mv gpu_burn ~/gpu_burn_old 2>/dev/null
+ 1744  git clone https://github.com/wilicc/gpu-burn.git
+ 1745  cd ~/gpu-burn
+ 1746  cat Makefile
+ 1747  make clean
+ 1748  make COMPUTE=103
+ 1749  cat Makefile
+ 1750  cuobjdump compare.fatbin | grep -i "sm\|arch\|compute"
+ 1751  CUDA_VISIBLE_DEVICES=0 ./gpu_burn 30
+ 1752  CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ./gpu_burn 60
+ 1753  tmux kill-session -t gpuburn72h 2>/dev/null
+ 1754  tmux new -s gpuburn72h
+ 1755  CUDA_VISIBLE_DEVICES=0 ./gpu_burn 30
+ 1756  tmux ls
+ 1757  ps aux | grep gpu_burn
+ 1758  grep "proc'd" ~/gpu_burn_test/burn72h_fp32_20260831_0444.log | tail -1
+ 1759  history
+ 1760  tmux ls
+ 1761  ls
+ 1762  cd ..
+ 1763  ls 
+ 1764  cd MLC/
+ 1765  ls
+ 1766  cd repos/
+ 1767  ls
+ 1768  ls -al
+ 1769  ls
+ 1770  nvidia-smi
+ 1771  nvidia-smi --query-gpu=name,memory.total --format=csv
+ 1772  nvidia-smi -q
+ 1773  nvidia-smi nvlink
+ 1774  nvidia-smi nvlink --status
+ 1775  nvidia-ami topo -m
+ 1776  nvidia-smi topo -m
+ 1777  tmux ls
+ 1778  export TEST_HOME=~/gpu_perf_test_$(date +%Y%m%d)
+ 1779  ls
+ 1780  ls -a; 
+ 1781  ls -al
+ 1782  nvbandwidth/
+ 1783  ls
+ 1784  cd nvbandwidth/
+ 1785  ls -al 
+ 1786  cd ..
+ 1787  mkdir -p ${TEST_HOME}/{nvbandwidth,p2p,cutlass,babelstream,gpu_burn,dcgm}
+ 1788  ls
+ 1789  cd gpu_perf_test_20260831/
+ 1790  ls
+ 1791  cd ..
+ 1792  echo "logs save path: ${TEST_HOME}"
+ 1793  ./nvbandwidth 2>&1 | tee ${TEST_HOME}/nvbandwidth/nvbandwidth_all_$(date +%Y%m%d_%H%M).log
+ 1794  cd nvbandwidth/
+ 1795  ls
+ 1796  mkdir build && cd build
+ 1797  cd build/
+ 1798  ls
+ 1799  ./nvbandwidth 2>&1 | tee ${TEST_HOME}/nvbandwidth/nvbandwidth_all_$(date +%Y%m%d_%H%M).log
+ 1800  ls
+ 1801  ls ~/gpu_perf_test_20260831/
+ 1802  ls ~/gpu_perf_test_20260831/nvbandwidth/
+ 1803  tmux ls
+ 1804  tmux attach -t mlperf
+ 1805  ls
+ 1806  cd /data
+ 1807  df -h
+ 1808  ls
+ 1809  cd lsh
+ 1810  ls
+ 1811  cat 405b-0831-0957.log
+ 1812  tmux attach -t mlperf
+ 1813  cat 405b-0831-0957.log
+ 1814  ls
+ 1815  cat 405b-0831-1139.log
+ 1816  tmux attach -t mlperf
+ 1817  cat 405b-0831-1139.log
+ 1818  ls
+ 1819  tail -f  405b-0831-1139.log
+ 1820  tmux attach -t mlperf
+ 1821  tail -f  405b-0831-1139.log
+ 1822  tmux attach -t mlperf
+ 1823  tail -f  405b-0831-1139.log
+ 1824  tmux attach -t mlperf
+ 1825  ls
+ 1826  cat 405b-0830-1403.log
+ 1827  ls
+ 1828  rm 405b-0830-1403.log
+ 1829  ls
+ 1830  cat 405b-0831-0132.log
+ 1831  ls
+ 1832  mv 405b-0831-0132.log 405b-0831-0132.log_offline_valid
+ 1833  ls
+ 1834  cat 405b-0831-0440.log
+ 1835  rm 405b-0831-0440.log
+ 1836  ls
+ 1837  cat 405b-0831-0446.log
+ 1838  rm 405b-0831-0446.log
+ 1839  ls
+ 1840  cat 405b-0831-0452.log
+ 1841  rm 405b-0831-0452.log
+ 1842  ls
+ 1843  cat 405b-0831-0501.log
+ 1844  rm 405b-0831-0501.log
+ 1845  ls
+ 1846  cat 405b-0831-0519.log
+ 1847  rm 405b-0831-0519.log
+ 1848  ls
+ 1849  cat 405b-0831-0530.log
+ 1850  rm 405b-0831-0530.log
+ 1851  ls
+ 1852  cat 405b-0831-0800.log
+ 1853  ls
+ 1854  cat 405b-0831-1139.log
+ 1855  ls
+ 1856  cat 405b-prep-75.log
+ 1857  rm 405b-prep-75.log
+ 1858  cat 405b-prep-74.log
+ 1859  rm 405b-prep-74.log
+ 1860  ls
+ 1861  cat 405b-0831-1418.log
+ 1862  rm 405b-0831-1418.log
+ 1863  ls
+ 1864  cat 405b-0831-0957.log
+ 1865  rm 405b-0831-0957.log
+ 1866  ls
+ 1867  cat 405b-0831-0800.log
+ 1868  ld
+ 1869  ls
+ 1870  tmux attach -t mlperf
+ 1871  ls
+ 1872  rm night-server.log night-accuracy.log
+ 1873  tmux attach -t mlperf
+ 1874  ls
+ 1875  rm night-accuracy.log night-server.log 
+ 1876  ls
+ 1877  cat 405b-0831-1424.log
+ 1878  rm 405b-0831-1424.log
+ 1879  ls
+ 1880  cat 405b-0831-1425.log
+ 1881  rm 405b-0831-1425.log
+ 1882  ls
+ 1883  cat 405b-0831-1423.log
+ 1884  rm 405b-0831-1423.log
+ 1885  tmux attach -t mlperf
+ 1886  nvidia-smi
+ 1887  tmux attach -t mlperf
+ 1888  cd /data/lsh
+ 1889  ls
+ 1890  cat night-server-0.9.log
+ 1891  cat night-server-1.6.log
+ 1892  ls
+ 1893  cat 405b-0831-1426.log
+ 1894  ls
+ 1895  cat 405b-0831-1608.log
+ 1896  ls
+ 1897  cat 405b-0831-1859.log
+ 1898  clear
+ 1899  ls
+ 1900  cat 
+ 1901  cat 405b-0831-0132.log_offline_valid
+ 1902  ls
+ 1903  cat 405b-0831-1426.log
+ 1904  ls
+ 1905  cat 405b-0831-1608.log405b-0831-1608.log
+ 1906  '
+ 1907  cat 405b-0831-1608.log
+ 1908  ls
+ 1909  cat 405b-0831-1608.log
+ 1910  ls
+ 1911  cat 405b-0831-1859.log
+ 1912  ls
+ 1913  cat 405b-0831-1859.log
+ 1914  tmux attach -t mlperf
+ 1915  S=/data/lsh/mlperf_inference_storage
+ 1916  echo "=== 전체 검색 ==="
+ 1917  find "$S" -name '*8313*' 2>/dev/null
+ 1918  echo "=== data 디렉토리 ==="
+ 1919  ls -la "$S/data/llama3.1-405b/"
+ 1920  echo "=== preprocessed 디렉토리 ==="
+ 1921  ls -la "$S/preprocessed_data/llama3.1-405b/"
+ 1922  S=/data/lsh/mlperf_inference_storage
+ 1923  SRC=$(find "$S" -name 'mlperf_llama3.1_405b_dataset_8313_processed_fp16_eval.pkl' 2>/dev/null | head -1)
+ 1924  echo "찾은 경로: $SRC"
+ 1925  mkdir -p "$S/preprocessed_data/llama3.1-405b"
+ 1926  ln -sf "$SRC" "$S/preprocessed_data/llama3.1-405b/mlperf_llama3.1_405b_dataset_8313_processed_fp16_eval.pkl"
+ 1927  ls -la "$S/preprocessed_data/llama3.1-405b/"
+ 1928  cp "$SRC" "$S/preprocessed_data/llama3.1-405b/"
+ 1929  ls -lh "$S/preprocessed_data/llama3.1-405b/"
+ 1930  S=/data/lsh/mlperf_inference_storage
+ 1931  find "$S" -name '*8313*' 2>/dev/null
+ 1932  ls -la "$S/data/llama3.1-405b/"
+ 1933  ls -la "$S/preprocessed_data/llama3.1-405b/"
+ 1934  S=/data/lsh/mlperf_inference_storage
+ 1935  P="$S/preprocessed_data/llama3.1-405b/mlperf_llama3.1_405b_dataset_8313_processed_fp16_eval.pkl"
+ 1936  rm -f "$P"
+ 1937  cp "$S/data/llama3.1-405b/mlperf_llama3.1_405b_dataset_8313_processed_fp16_eval.pkl" "$P"
+ 1938  ls -lh "$S/preprocessed_data/llama3.1-405b/"
+ 1939  tmux attach -t mlperf
+ 1940  nvidia-smi
+ 1941  tmux attach -t mlperf
+ 1942  cd ~
+ 1943  cp mlperf-405b.sh mlperf-405b.sh.bak
+ 1944  python3 - <<'EOF'
+ 1945  p='mlperf-405b.sh'
+ 1946  s=open(p).read()
+ 1947  old='''accuracy)
+ 1948    N="${A2:-4}"
+ 1949    say "Llama3.1-405B AccuracyOnly (Offline)  |  GPU ${N}장"'''
+ 1950  new='''accuracy)
+ 1951    N="${A2:-4}"
+ 1952    say "Llama3.1-405B AccuracyOnly (Offline)  |  GPU ${N}장"
+ 1953    # 채점기 필수 자산 사전 검증 (없으면 추론 3시간 후 채점 단계에서 실패)
+ 1954    AF=0
+ 1955    for f in "$MODEL/config.json" "$MODEL/tokenizer.json" \\
+ 1956             "$PREP/mlperf_llama3.1_405b_dataset_8313_processed_fp16_eval.pkl"; do
+ 1957      if [ -f "$f" ] && [ -s "$f" ]; then ok "$(basename "$f")"
+ 1958      else ng "누락: $f"; AF=1; fi
+ 1959    done
+ 1960    if [ "$AF" -eq 1 ]; then
+ 1961      say ""
+ 1962      say " 채점 자산이 없어 중단합니다. 아래를 먼저 실행하세요:"
+ 1963      say "   hf download meta-llama/Llama-3.1-405B-Instruct config.json tokenizer.json --local-dir $MODEL"
+ 1964      say "   cp $DATA/mlperf_llama3.1_405b_dataset_8313_processed_fp16_eval.pkl $PREP/"
+ 1965      exit 1
+ 1966    fi'''
+ 1967  assert old in s, "패턴 불일치"
+ 1968  open(p,'w').write(s.replace(old,new))
+ 1969  print("사전검증 추가 완료")
+ 1970  EOF
+ 1971  bash -n mlperf-405b.sh && echo "문법 OK"
+ 1972  tmux attach -t mlperf
+ 1973  ls
+ 1974  ls -al 
+ 1975  git clone https://github.com/NVIDIA/cuda-samples.git
+ 1976  ls
+ 1977  cd cuda-samples/
+ 1978  ls
+ 1979  cd cpp/
+ 1980  ls
+ 1981  cd 5_Domain_Specific/
+ 1982  ls
+ 1983  cd p2pBandwidthLatencyTest/
+ 1984  ls
+ 1985  nproc
+ 1986  make -j$(nproc)
+ 1987  cd ~/cuda-samples/
+ 1988  ls
+ 1989  ls -l Samples/5_Domain_Specific/p2pBandwidthLatencyTest/
+ 1990  ls -l cpp/5_Domain_Specific/p2pBandwidthLatencyTest/
+ 1991  mkdir -p build && cd build
+ 1992  ls
+ 1993  cmake ..
+ 1994  ls -l cpp/5_Domain_Specific/p2pBandwidthLatencyTest/
+ 1995  make -j$(nproc)
+ 1996  ls
+ 1997  ls -l cpp/5_Domain_Specific/p2pBandwidthLatencyTest/
+ 1998  echo "로그 저장 경로: ${TEST_HOME}"
+ 1999  ls ~/gpu_perf_test_20260831/
+ 2000  export TEST_HOME=~/gpu_perf_test_20260831/
+ 2001  export ALL_GPUS=0,1,2,3,4,5,6
+ 2002  echo "grpus : $ALL_GPUS"
+ 2003  CUDA_VISIBLE_DEVICES=${ALL_GPUS} cpp/5_Domain_Specific/p2pBandwidthLatencyTest/p2pBandwidthLatencyTest 2>&1 | tee ${TEST_HOME}/p2p/p2p_bandwidth_latency_$(date +%Y%m%d_%H%M).log
+ 2004  cd ~/gpu_perf_test_20260831/
+ 2005  ls
+ 2006  cd p2p/
+ 2007  ls
+ 2008  cat p2p_bandwidth_latency_20260831_2341.log 
+ 2009  cd ~/
+ 2010  ls
+ 2011  git clone https://github.com/NVIDIA/cutlass.git
+ 2012  ls
+ 2013  cd cutlass/
+ 2014  ls
+ 2015  mkdir build  && cd build 
+ 2016  ls
+ 2017  cmake ..
+ 2018  ls
+ 2019  cd ..
+ 2020  rm -rf ./build
+ 2021  ls
+ 2022  mkdir build && cd build
+ 2023  cmake .. -DCUTLASS_NVCC_ARCHS=103 -DCUTLASS_ENABLE_TESTS=ON -DCUTLASS_ENABLE_EXAMPLES=ON
+ 2024  ls
+ 2025  make -j$(nproc) cutlass_profiler
+ 2026  ls
+ 2027  ls -al 
+ 2028  ls ~/cutlass/
+ 2029  vi run_gemm_test.sh
+ 2030  echo gpuid:$ALL_GPUS
+ 2031  vi run_gemm_test.sh 
+ 2032  ls -al 
+ 2033  chmod +x run_gemm_test.sh 
+ 2034  ls -al 
+ 2035  ./run_gemm_test.sh 
+ 2036  ls ~/gpu_perf_test_20260831/cutlass/
+ 2037  cat ~/gpu_perf_test_20260831/cutlass/gemm_peak_20260901_0015.log
+ 2038  ls
+ 2039  vi run_gemm_test.sh 
+ 2040  ./run_gemm_test.sh 
+ 2041  ls ~/gpu_perf_test_20260831/cutlass/
+ 2042  vi /run_sustained_gemm.sh
+ 2043  ls
+ 2044  ls -al 
+ 2045  vi run_sustained_gemm_test.sh
+ 2046  ls
+ 2047  chmod +x run_sustained_gemm_test.sh 
+ 2048  ls
+ 2049  ./run_sustained_gemm_test.sh 
+ 2050  ls
+ 2051  vi run_sustained_gemm_parallel.sh
+ 2052  vi run_sustained_gemm_parallel.sh 
+ 2053  vi run_gemm_memory_test.sh
+ 2054  ls 
+ 2055  chmod  +x run_sustained_gemm_parallel.sh
+ 2056  ls
+ 2057  ./run_sustained_gemm_parallel.sh 
+ 2058  vi run_sustained_gemm_parallel.sh
+ 2059  ls -al 
+ 2060  vi run_gemm_memory_test.sh
+ 2061  vi run_sustained_gemm_parallel.sh
+ 2062  vi run_sustained_gemm_parallel.sh 
+ 2063  vi run_gemm_memory_test.sh 
+ 2064  chmod +x  run_gemm_memory_test.sh
+ 2065  ls
+ 2066  ./run_gemm_memory_test.sh
+ 2067  vi run_gemm_memory_test.sh
+ 2068  ls
+ 2069  ls -al ~/gpu_perf_test_20260831/
+ 2070  ls
+ 2071  vi run_gemm_test.sh 
+ 2072  ls -al ~/gpu_perf_test_20260831/
+ 2073  cd ~/
+ 2074  ls
+ 2075  cd BabelStream/
+ 2076  ls
+ 2077  cd build/
+ 2078  ls
+ 2079  vi run_babelstream.sh 
+ 2080  ./run_babelstream.sh 
+ 2081  ls ~/gpu_perf_test_20260831/babelstream/
+ 2082  cat ~/gpu_perf_test_20260831/babelstream/stream_bench_20260901_0142.log 
+ 2083  cd ..
+ 2084  cd cutlass/
+ 2085  cd build/
+ 2086  ls
+ 2087  vi run_gemm_memory_test.sh 
+ 2088  ./run_gemm_memory_test.sh 
+ 2089  vi run_gemm_memory_test.sh 
+ 2090  ./run_gemm_memory_test.sh 
+ 2091  ls -al ~/gpu_perf_test_20260831/cutlass/
+ 2092  cat ~/gpu_perf_test_20260831/cutlass/sustained_gemm_20260901_0033.log
+ 2093  ls -al ~/gpu_perf_test_20260831/cutlass/
+ 2094  cat ~/gpu_perf_test_20260831/cutlass/sustained_gemm_parallel_20260901_0101.log
+ 2095  cat ~/gpu_perf_test_20260831/cutlass/memread_gpu0_20260901_0119.log
+ 2096  cat ~/gpu_perf_test_20260831/cutlass/gemm_memread_gpu6_20260901_0147.log
+ 2097  ls -al ~/gpu_perf_test_20260831/cutlass/
+ 2098  cat ~/gpu_perf_test_20260831/cutlass/memread_gpu0_20260901_0148.log
+ 2099  echo $TEST_HOME
+ 2100  vi run_large_metrix_test.sh
+ 2101  chmod +x run_large_metrix_test.sh 
+ 2102  ls
+ 2103  ./run_large_metrix_test.sh 
+ 2104  grep -i "tflops\|gflops" ${TEST_HOME}/cutlass/large_matrix_*.log
+ 2105  dcgmi --version
+ 2106  dcgmi diag -r 3 -i ${ALL_GPUS} 2>&1 | tee ${TEST_HOME}/dcgm/dcgm_diag_r3_$(date +%Y%m%d_%H%M).log
+ 2107  tmux ls
+ 2108  tmux new -s gpuburn24h
+ 2109  tmux list
+ 2110  tmux ls
+ 2111  cd ~/gpu-burn/
+ 2112  ls
+ 2113  cd ..
+ 2114  ls -al 
+ 2115  cd gpu_burn_test/
+ 2116  ls
+ 2117  ls -al 
+ 2118  cat burn72h_20260831_0325.log
+ 2119  ls -al 
+ 2120  cd ..
+ 2121  cd gpu-burn/
+ 2122  ls
+ 2123  tmux new-session -d -s gpuburn24h
+ 2124  tmux ls
+ 2125  ls
+ 2126  tmux new -d -s gpuburn24h
+ 2127  bmux ls 
+ 2128  tmux ls
+ 2129  tmux attatch -t gpuburn24h
+ 2130  tmux attach -t gpuburn24h
+ 2131  tmux ls
+ 2132  history
+ 2133  cd ..
+ 2134  vi 20260901_perf_test_commands.txt
+ 2135  cat 20260901_perf_test_commands.txt
+ 2136  pwd
+ 2137  ls
+ 2138  rm 20260901_perf_test_commands.txt
+ 2139  ls
+ 2140  history -a
+ 2141  history > ~/20260901_perf_test_history.txt

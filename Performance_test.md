@@ -622,3 +622,25 @@ cat /etc/apt/apt.conf.d/50unattended-upgrades | grep -i reboot
 ---
 
 **요약 추천**: `tmux new -s gpuburn72h` 세션 안에서 `-d 259200`으로 실행 + 별도 tmux 창에서 60초 간격 모니터링 CSV 기록. 이 조합이면 세션이 끊겨도 문제없고, 중간에 언제든 접속해서 진행 상황 확인 가능합니다.
+
+
+```bash
+ 2015  mv gpu_burn ~/gpu_burn_old 2>/dev/null
+ 2016  git clone https://github.com/wilicc/gpu-burn.git
+ 2017  cd ~/gpu-burn
+ 2018  cat Makefile
+ 2019  make clean
+ 2020  make COMPUTE=103
+ 2021  cat Makefile
+ 2022  cuobjdump compare.fatbin | grep -i "sm\|arch\|compute"
+ 2023  CUDA_VISIBLE_DEVICES=0 ./gpu_burn 30
+ 2024  CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 ./gpu_burn 60
+ 2025  tmux kill-session -t gpuburn72h 2>/dev/null
+ 2026  tmux new -s gpuburn72h
+ 2027  CUDA_VISIBLE_DEVICES=0 ./gpu_burn 30
+ 2028  tmux ls
+ 2029  ps aux | grep gpu_burn
+ 2030  grep "proc'd" ~/gpu_burn_test/burn72h_fp32_20260831_0444.log | tail -1
+ ```
+
+ 
