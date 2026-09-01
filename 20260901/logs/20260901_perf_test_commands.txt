@@ -1,4 +1,176 @@
+
 ##############################################################################
+#  XE9780 GPU Performance Test — 수행 명령어 모음
+#  서버: dell@dell | GPU: NVIDIA B300 SXM6 AC x7 | 드라이버: 610.57.04
+#  날짜: $(date +%Y-%m-%d)
+##############################################################################
+
+#=============================================================================
+# 0. 사전 준비 — 로그 디렉터리 & 환경변수
+#=============================================================================
+export TEST_HOME=~/perf_test_$(date +%Y%m%d)
+mkdir -p ${TEST_HOME}/{nvbandwidth,p2p,cutlass,babelstream,gpu_burn,dcgm}
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export ALL_GPUS=0,1,2,3,4,5,6
+
+echo "=== 로그 저장 경로: ${TEST_HOME} ==="
+echo "=== GPU 목록: ${ALL_GPUS} ==="
+nvidia-smi -L
+
+
+#=============================================================================
+# 1. DCGM Stress Test — NVIDIA 공식 GPU Health Check
+#    목적: GPU 메모리, SM, PCIe, NVLink, 전원, 온도 종합 진단
+#=============================================================================
+
+# 서비스 확인
+sudo systemctl status nvidia-dcgm
+dcgmi --version
+
+# GPU 디스커버리
+dcgmi discovery -l 2>&1 | tee ${TEST_HOME}/dcgm/dcgm_discovery_$(date +%Y%m%d_%H%M).log
+
+# Level 1 진단 (Quick — 수 초)
+dcgmi diag -r 1 -i ${ALL_GPUS} 2>&1 | tee ${TEST_HOME}/dcgm/dcgm_diag_r1_$(date +%Y%m%d_%H%M).log
+
+# Level 2 진단 (Medium — 수 분)
+dcgmi diag -r 2 -i ${ALL_GPUS} 2>&1 | tee ${TEST_HOME}/dcgm/dcgm_diag_r2_$(date +%Y%m%d_%H%M).log
+
+# Level 3 진단 (Deep — 수십 분) ★ 핵심
+dcgmi diag -r 3 -i ${ALL_GPUS} 2>&1 | tee ${TEST_HOME}/dcgm/dcgm_diag_r3_$(date +%Y%m%d_%H%M).log
+
+
+#=============================================================================
+# 2. nvbandwidth — 호스트↔GPU 메모리 전송 대역폭 (H2D / D2H)
+#    목적: PCIe 링크 정상 여부 확인
+#=============================================================================
+
+# 빌드 (최초 1회)
+cd ~/
+git clone https://github.com/NVIDIA/nvbandwidth.git
+cd nvbandwidth && mkdir -p build && cd build
+cmake .. && make -j$(nproc)
+
+# 전체 테스트
+./nvbandwidth 2>&1 | tee ${TEST_HOME}/nvbandwidth/nvbandwidth_all_$(date +%Y%m%d_%H%M).log
+
+# H2D만
+./nvbandwidth -t host_to_device_memcpy_ce 2>&1 | tee ${TEST_HOME}/nvbandwidth/nvbandwidth_h2d_$(date +%Y%m%d_%H%M).log
+
+# D2H만
+./nvbandwidth -t device_to_host_memcpy_ce 2>&1 | tee ${TEST_HOME}/nvbandwidth/nvbandwidth_d2h_$(date +%Y%m%d_%H%M).log
+
+# D2D (NVLink)
+./nvbandwidth -t device_to_device_memcpy_read_ce 2>&1 | tee ${TEST_HOME}/nvbandwidth/nvbandwidth_d2d_$(date +%Y%m%d_%H%M).log
+
+
+#=============================================================================
+# 3. p2pBandwidthLatencyTest — GPU 간 P2P 대역폭/레이턴시
+#    목적: NVLink/NVSwitch 정상 동작 검증
+#=============================================================================
+
+# 빌드 (최초 1회)
+cd ~/
+git clone https://github.com/NVIDIA/cuda-samples.git
+cd cuda-samples/Samples/5_Domain_Specific/p2pBandwidthLatencyTest
+make -j$(nproc)
+
+# 실행
+CUDA_VISIBLE_DEVICES=${ALL_GPUS} ./p2pBandwidthLatencyTest 2>&1 | tee ${TEST_HOME}/p2p/p2p_bandwidth_latency_$(date +%Y%m%d_%H%M).log
+
+
+#=============================================================================
+# 4. PeakToTops / CublasMatmulBench — GEMM 최대 연산 성능 (TFLOPS)
+#    목적: GPU 최대 연산 성능 측정, B300 이론 피크 대비 비교
+#=============================================================================
+
+# CUTLASS 빌드 (최초 1회)
+cd ~/
+git clone https://github.com/NVIDIA/cutlass.git
+cd cutlass && mkdir -p build && cd build
+cmake .. -DCUTLASS_NVCC_ARCHS=103 -DCUTLASS_ENABLE_TESTS=ON -DCUTLASS_ENABLE_EXAMPLES=ON
+make -j$(nproc) cutlass_profiler
+
+# GPU별 FP16 GEMM Peak 측정
+for gpu_id in 0 1 2 3 4 5 6; do
+  echo "===== GPU ${gpu_id} GEMM Peak Test =====" | tee -a ${TEST_HOME}/cutlass/gemm_peak_$(date +%Y%m%d_%H%M).log
+  CUDA_VISIBLE_DEVICES=${gpu_id} ./tools/profiler/cutlass_profiler \
+    --operation=gemm \
+    --m=8192 --n=8192 --k=8192 \
+    --A=f16 --B=f16 --C=f32 \
+    --warmup-iterations=5 \
+    --profiling-iterations=20 \
+    2>&1 | tee -a ${TEST_HOME}/cutlass/gemm_peak_$(date +%Y%m%d_%H%M).log
+done
+
+
+#=============================================================================
+# 5. Sustained GEMM TFLOPS — 장시간 연속 GEMM 성능 유지 측정
+#    목적: 냉각/전력 문제로 인한 스로틀링 발생 여부 확인
+#=============================================================================
+
+DURATION=600  # 초 (10분, 필요 시 늘림)
+END_TIME=$(($(date +%s) + DURATION))
+LOG_FILE=${TEST_HOME}/cutlass/sustained_gemm_$(date +%Y%m%d_%H%M).log
+iteration=0
+
+echo "Sustained GEMM Test Start: $(date)" | tee ${LOG_FILE}
+while [ $(date +%s) -lt ${END_TIME} ]; do
+  iteration=$((iteration + 1))
+  echo "--- Iteration ${iteration} ($(date)) ---" | tee -a ${LOG_FILE}
+  CUDA_VISIBLE_DEVICES=${ALL_GPUS} ~/cutlass/build/tools/profiler/cutlass_profiler \
+    --operation=gemm \
+    --m=8192 --n=8192 --k=8192 \
+    --A=f16 --B=f16 --C=f32 \
+    --warmup-iterations=2 \
+    --profiling-iterations=10 \
+    2>&1 | tee -a ${LOG_FILE}
+done
+echo "Sustained GEMM Test End: $(date)" | tee -a ${LOG_FILE}
+
+
+#=============================================================================
+# 6. Stream_Bench (BabelStream) — HBM3 대역폭 측정
+#    목적: HBM3 Read/Write/Add/Copy/Scale/Triad 대역폭 및 메모리 불량 확인
+#=============================================================================
+
+# 빌드 (최초 1회)
+cd ~/
+git clone https://github.com/UoB-HPC/BabelStream.git
+cd BabelStream && mkdir -p build && cd build
+cmake .. -DMODEL=cuda -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc -DCUDA_ARCH=sm_103
+make -j$(nproc)
+
+# GPU별 스트림 벤치마크
+for gpu_id in 0 1 2 3 4 5 6; do
+  echo "===== GPU ${gpu_id} Stream Benchmark =====" | tee -a ${TEST_HOME}/babelstream/stream_bench_$(date +%Y%m%d_%H%M).log
+  CUDA_VISIBLE_DEVICES=${gpu_id} ./cuda-stream \
+    --arraysize $((1024*1024*512)) \
+    --numtimes 100 \
+    2>&1 | tee -a ${TEST_HOME}/babelstream/stream_bench_$(date +%Y%m%d_%H%M).log
+done
+
+
+#=============================================================================
+# 7. GEMM + MemRead TFLOPS — 연산과 메모리 동시 부하
+#    목적: 동시 부하에서 문제가 생기는 개별 불량 확인 및 성능 측정
+#=============================================================================
+
+# GEMM (백그라운드)
+CUDA_VISIBLE_DEVICES=${ALL_GPUS} ~/cutlass/build/tools/profiler/cutlass_profiler \
+  --operation=gemm \
+  --m=16384 --n=16384 --k=16384 \
+  --A=f16 --B=f16 --C=f32 \
+  --warmup-iterations=5 \
+  --profiling-iterations=50 \
+  2>&1 | tee ${TEST_HOME}/cutlass/gemm_memread_gemm_$(date +%Y%m%d_%H%M).log &
+
+# MemRead (BabelStream, 백그라운드)
+for gpu_id in 0 1 2 3 4 5 6; do
+  CUDA_VISIBLE_DEVICES=${gpu_id} ~/BabelStream/build/cuda-stream \
+    --arraysize $((1024*1024*256)) \
+    --numtimes 100 \
     2>&1 | tee ${TEST_HOME}/babelstream/memread_gpu${gpu_id}_$(date +%Y%m%d_%H%M).log &
 done
 wait
@@ -62,5 +234,4 @@ echo "아카이브 생성 완료: ~/xe9780_perf_test_$(date +%Y%m%d).tar.gz"
 
 # 로그 파일 목록 확인
 find ${TEST_HOME} -type f | sort
-
 
